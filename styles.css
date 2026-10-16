@@ -1,0 +1,1139 @@
+:root {
+  --bg-obsidian: #000000;
+  --bg-elevated: #060607;
+  --bg-glass: rgba(14, 14, 16, 0.72);
+  --bone: #ECEAE4;
+  --bone-muted: rgba(236, 234, 228, 0.62);
+  --bone-faint: rgba(236, 234, 228, 0.34);
+  --hairline: rgba(236, 234, 228, 0.11);
+  --hairline-strong: rgba(236, 234, 228, 0.24);
+  --champagne: #D6C7B2;
+  --amber-glow: rgba(214, 199, 178, 0.16);
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  background-color: var(--bg-obsidian);
+  color: var(--bone);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  selection-background-color: var(--bone);
+  selection-color: var(--bg-obsidian);
+}
+
+::selection {
+  background: var(--bone);
+  color: var(--bg-obsidian);
+}
+
+body {
+  background-color: var(--bg-obsidian);
+  color: var(--bone);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Subtle Analog Film Grain Overlay matching the uploaded XUBO image */
+.film-grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.038;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Ambient Spotlight following cursor */
+.cursor-spotlight {
+  position: fixed;
+  width: 680px;
+  height: 680px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(236, 234, 228, 0.045) 0%, rgba(236, 234, 228, 0) 68%);
+  pointer-events: none;
+  z-index: 1;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s ease;
+}
+
+/* Typography Helpers */
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--bone-faint);
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--champagne);
+}
+
+.mono-index {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--bone-faint);
+}
+
+/* TOP TELEMETRY BAR (Strictly non-interactive, architectural header) */
+.telemetry-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 54px;
+  padding: 0 3.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(236, 234, 228, 0.07);
+  background: rgba(0, 0, 0, 0.76);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 100;
+  user-select: none;
+}
+
+.telemetry-left,
+.telemetry-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--bone);
+  box-shadow: 0 0 12px var(--bone);
+  animation: pulseDot 3s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+  0%, 100% { opacity: 0.45; transform: scale(0.95); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+.mono-divider {
+  color: rgba(236, 234, 228, 0.18);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+}
+
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  padding: 120px 4vw 90px;
+  max-width: 1480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-backdrop-glow {
+  position: absolute;
+  top: 60px;
+  width: 75vw;
+  max-width: 960px;
+  height: 420px;
+  background: radial-gradient(ellipse at center, rgba(236, 234, 228, 0.065) 0%, rgba(0, 0, 0, 0) 72%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.brand-monument {
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-frame {
+  width: min(460px, 76vw);
+  margin-bottom: 18px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.xubo-hero-logo {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: lighten;
+  filter: contrast(1.06) drop-shadow(0 0 48px rgba(236, 234, 228, 0.09));
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.kicker-line {
+  width: 44px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(236, 234, 228, 0.35), transparent);
+}
+
+.hero-headline {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: clamp(2.2rem, 4.6vw, 4.1rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  color: var(--bone);
+  margin-bottom: 24px;
+}
+
+.headline-accent {
+  font-weight: 500;
+  background: linear-gradient(180deg, #FFFFFF 0%, #BEB9AE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-lead {
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
+  line-height: 1.72;
+  color: var(--bone-muted);
+  max-width: 680px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+/* 65" OLED TV SHOWCASE STAGE */
+.tv-stage {
+  width: 100%;
+  max-width: 1240px;
+  margin-top: 68px;
+  position: relative;
+  perspective: 1600px;
+}
+
+.ambilight-aura {
+  position: absolute;
+  inset: -36px -48px;
+  border-radius: 40px;
+  background: radial-gradient(
+    ellipse at 50% 48%,
+    rgba(214, 178, 132, 0.16) 0%,
+    rgba(88, 122, 168, 0.11) 45%,
+    rgba(0, 0, 0, 0) 75%
+  );
+  filter: blur(48px);
+  z-index: -1;
+  transition: background 1.8s ease;
+}
+
+.oled-frame {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.oled-bezel {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(145deg, #1b1b1e 0%, #070708 45%, #161619 100%);
+  padding: 6px;
+  border-radius: 10px;
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.95),
+    0 0 0 1px rgba(236, 234, 228, 0.16),
+    inset 0 1px 1px rgba(255, 255, 255, 0.18);
+  position: relative;
+}
+
+.oled-screen {
+  width: 100%;
+  height: 100%;
+  background: #020203;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cinema-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.72;
+}
+
+.cinema-vignette {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 70% 35%, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.86) 85%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.35) 50%, rgba(0, 0, 0, 0.88) 100%);
+  z-index: 1;
+}
+
+/* INSIDE-TV XUBO 10-FOOT OSD SHOWCASE */
+.osd-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: clamp(16px, 2.6vw, 34px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+  user-select: none;
+}
+
+.osd-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(236, 234, 228, 0.12);
+  padding-bottom: 14px;
+}
+
+.osd-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.osd-xubo {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  color: var(--bone);
+}
+
+.osd-badge {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  padding: 4px 8px;
+  border-radius: 3px;
+  background: rgba(236, 234, 228, 0.14);
+  color: var(--bone);
+  border: 1px solid rgba(236, 234, 228, 0.22);
+}
+
+.osd-badge-dim {
+  background: rgba(236, 234, 228, 0.05);
+  color: var(--bone-muted);
+  border-color: rgba(236, 234, 228, 0.1);
+}
+
+.osd-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  color: var(--bone-muted);
+}
+
+.osd-dot {
+  opacity: 0.4;
+}
+
+/* OSD 3-Column Layout */
+.osd-columns {
+  display: grid;
+  grid-template-columns: 0.85fr 1.35fr 1.1fr;
+  gap: clamp(12px, 1.6vw, 22px);
+  margin: auto 0;
+  align-items: stretch;
+}
+
+.osd-panel {
+  background: rgba(8, 8, 10, 0.74);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(236, 234, 228, 0.11);
+  border-radius: 8px;
+  padding: clamp(14px, 1.6vw, 20px);
+  display: flex;
+  flex-direction: column;
+}
+
+.osd-panel-header {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  color: var(--bone-faint);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(236, 234, 228, 0.08);
+}
+
+.osd-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.osd-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 11px;
+  border-radius: 5px;
+  font-size: 0.78rem;
+  color: var(--bone-muted);
+  border: 1px solid transparent;
+}
+
+.osd-item.active-group {
+  background: rgba(236, 234, 228, 0.08);
+  color: var(--bone);
+  border-color: rgba(236, 234, 228, 0.18);
+}
+
+.osd-index {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  color: var(--bone-faint);
+  margin-right: 10px;
+}
+
+.osd-name {
+  flex: 1;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.osd-count {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  opacity: 0.55;
+}
+
+/* Channel Rows with Automated Focus Glide */
+.osd-channel-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: all 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.osd-channel-row.is-focused {
+  background: rgba(236, 234, 228, 0.94);
+  color: #050506;
+  border-color: #FFFFFF;
+  box-shadow: 0 8px 28px rgba(236, 234, 228, 0.22);
+  transform: translateX(4px);
+}
+
+.ch-num {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  opacity: 0.55;
+  min-width: 28px;
+}
+
+.osd-channel-row.is-focused .ch-num {
+  color: #050506;
+  opacity: 0.75;
+  font-weight: 600;
+}
+
+.ch-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.ch-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ch-epg {
+  font-size: 0.68rem;
+  opacity: 0.62;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ch-quality {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid currentColor;
+  opacity: 0.75;
+}
+
+/* Column 3: EPG Inspector */
+.epg-inspector {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.epg-now-badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: var(--champagne);
+  margin-bottom: 6px;
+}
+
+.epg-program-title {
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--bone);
+  margin-bottom: 8px;
+  letter-spacing: -0.01em;
+}
+
+.epg-program-desc {
+  font-size: 0.74rem;
+  line-height: 1.55;
+  color: var(--bone-muted);
+  margin-bottom: 14px;
+}
+
+.epg-progress-wrap {
+  margin-bottom: 14px;
+}
+
+.epg-times {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--bone-faint);
+  margin-bottom: 6px;
+}
+
+.epg-bar-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(236, 234, 228, 0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.epg-bar-fill {
+  width: 64%;
+  height: 100%;
+  background: var(--bone);
+  transition: width 0.6s ease;
+}
+
+.epg-specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.spec-Chip {
+  background: rgba(236, 234, 228, 0.04);
+  border: 1px solid rgba(236, 234, 228, 0.08);
+  border-radius: 4px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.spec-k {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  color: var(--bone-faint);
+  letter-spacing: 0.1em;
+}
+
+.spec-v {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--bone);
+}
+
+.osd-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(236, 234, 228, 0.1);
+  padding-top: 12px;
+}
+
+.osd-bottom-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.signal-lock-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #D6C7B2;
+  box-shadow: 0 0 10px #D6C7B2;
+}
+
+/* Brushed Titanium TV Pedestal */
+.oled-pedestal {
+  width: 240px;
+  height: 14px;
+  background: linear-gradient(90deg, #0b0b0d 0%, #2a2a2e 50%, #0b0b0d 100%);
+  border-bottom: 1px solid rgba(236, 234, 228, 0.22);
+  border-radius: 0 0 4px 4px;
+  position: relative;
+}
+
+.oled-pedestal::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 48px;
+  height: 8px;
+  background: #18181b;
+}
+
+/* SECTION 02: MANIFESTO */
+.manifesto-section {
+  max-width: 1320px;
+  margin: 140px auto;
+  padding: 0 4vw;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  border-top: 1px solid var(--hairline);
+  padding-top: 56px;
+}
+
+.manifesto-statement {
+  font-size: clamp(1.45rem, 2.5vw, 2.35rem);
+  line-height: 1.42;
+  font-weight: 300;
+  color: var(--bone-muted);
+  letter-spacing: -0.02em;
+  margin-bottom: 64px;
+}
+
+.manifesto-statement strong,
+.manifesto-statement em {
+  color: var(--bone);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.manifesto-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  border-top: 1px solid var(--hairline);
+  padding-top: 36px;
+}
+
+.metric-block {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metric-value {
+  font-family: var(--font-sans);
+  font-size: clamp(2.2rem, 3.6vw, 3.4rem);
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  color: var(--bone);
+}
+
+.metric-value small {
+  font-size: 1.1rem;
+  color: var(--champagne);
+  margin-left: 4px;
+  font-family: var(--font-mono);
+}
+
+.metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  color: var(--bone-faint);
+}
+
+/* SECTION 03: BENTO ARCHITECTURE GRID */
+.bento-section {
+  max-width: 1320px;
+  margin: 140px auto;
+  padding: 0 4vw;
+}
+
+.section-header {
+  margin-bottom: 52px;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.75rem);
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  margin-top: 12px;
+  color: var(--bone);
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.bento-card {
+  background: linear-gradient(180deg, rgba(236, 234, 228, 0.035) 0%, rgba(236, 234, 228, 0.01) 100%);
+  border: 1px solid var(--hairline);
+  border-radius: 12px;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.4s ease, transform 0.4s ease;
+}
+
+.bento-card:hover {
+  border-color: var(--hairline-strong);
+}
+
+.bento-wide {
+  grid-column: span 2;
+}
+
+.bento-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.bento-title {
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--bone);
+  margin-bottom: 14px;
+}
+
+.bento-desc {
+  font-size: 0.96rem;
+  line-height: 1.68;
+  color: var(--bone-muted);
+  font-weight: 300;
+  margin-bottom: 32px;
+}
+
+.bento-desc code {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--bone);
+  background: rgba(236, 234, 228, 0.07);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+/* Visual Inside Bento 1: Pipeline */
+.telemetry-visual {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(236, 234, 228, 0.08);
+}
+
+.pipeline-node {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid var(--hairline);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pipeline-node.node-highlight {
+  border-color: rgba(214, 199, 178, 0.45);
+  background: rgba(214, 199, 178, 0.05);
+}
+
+.node-title {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  color: var(--bone);
+}
+
+.node-sub {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--bone-faint);
+}
+
+.pipeline-flow {
+  width: 42px;
+  height: 1px;
+  background: rgba(236, 234, 228, 0.2);
+  position: relative;
+}
+
+/* Visual Inside Bento 2: Spatial Matrix */
+.spatial-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: auto;
+}
+
+.matrix-cell {
+  height: 44px;
+  border-radius: 6px;
+  border: 1px solid rgba(236, 234, 228, 0.08);
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.matrix-cell.active-cell {
+  border-color: var(--bone);
+  background: rgba(236, 234, 228, 0.12);
+  box-shadow: 0 0 24px rgba(236, 234, 228, 0.14);
+}
+
+.cell-coord {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--bone);
+}
+
+/* Visual Inside Bento 3: EPG Mini */
+.epg-timeline-mini {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.mini-track {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mini-time {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--bone-faint);
+}
+
+.mini-block {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid rgba(236, 234, 228, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: var(--bone-muted);
+}
+
+.mini-track.active-track .mini-block {
+  background: var(--bone);
+  color: var(--bg-obsidian);
+  font-weight: 600;
+  border-color: var(--bone);
+}
+
+/* Visual Inside Bento 4: Cinema Poster Strip */
+.poster-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.poster-card {
+  background: #08080a;
+  border: 1px solid rgba(236, 234, 228, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.poster-card.poster-featured {
+  border-color: var(--bone);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.poster-art {
+  height: 110px;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+}
+
+.art-1 {
+  background: radial-gradient(circle at 50% 60%, #9b4d1f 0%, #1c110a 65%, #050506 100%);
+}
+.art-2 {
+  background: radial-gradient(circle at 50% 35%, #d6b284 0%, #4b3822 55%, #070709 100%);
+}
+.art-3 {
+  background: radial-gradient(circle at 60% 40%, #6f8ab8 0%, #182235 60%, #050506 100%);
+}
+.art-4 {
+  background: radial-gradient(circle at 40% 50%, #8ea89d 0%, #16231f 60%, #050506 100%);
+}
+
+.poster-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.poster-meta span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  color: var(--bone);
+}
+
+.poster-meta small {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--bone-faint);
+}
+
+/* SECTION 04: PRECISION PILLARS */
+.precision-section {
+  max-width: 1320px;
+  margin: 140px auto;
+  padding: 0 4vw;
+}
+
+.pillars-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  border-top: 1px solid var(--hairline);
+  padding-top: 48px;
+}
+
+.pillar-item {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pillar-number {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: var(--champagne);
+}
+
+.pillar-heading {
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--bone);
+  letter-spacing: -0.015em;
+}
+
+.pillar-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--bone-muted);
+  font-weight: 300;
+}
+
+.pillar-text code {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  color: var(--bone);
+}
+
+/* SECTION 05: TECHNICAL LEDGER */
+.specs-section {
+  max-width: 1320px;
+  margin: 140px auto;
+  padding: 0 4vw;
+}
+
+.specs-ledger {
+  border-top: 1px solid var(--hairline-strong);
+}
+
+.ledger-row {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--hairline);
+  align-items: baseline;
+}
+
+.ledger-key {
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.16em;
+  color: var(--bone-faint);
+}
+
+.ledger-val {
+  font-size: 0.98rem;
+  color: var(--bone);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+/* MONOLITHIC FOOTER */
+.monolith-footer {
+  max-width: 1320px;
+  margin: 160px auto 0;
+  padding: 60px 4vw 48px;
+  border-top: 1px solid var(--hairline);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.footer-brand-watermark {
+  width: min(340px, 60vw);
+  opacity: 0.88;
+}
+
+.footer-logo-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  mix-blend-mode: lighten;
+  user-select: none;
+}
+
+.footer-meta-bar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 28px;
+  border-top: 1px solid rgba(236, 234, 228, 0.06);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+/* Scroll Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .osd-columns {
+    grid-template-columns: 1fr 1.2fr;
+  }
+  .osd-col-categories {
+    display: none;
+  }
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  .bento-wide {
+    grid-column: span 1;
+  }
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .pillars-row {
+    grid-template-columns: 1fr;
+  }
+  .ledger-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 720px) {
+  .telemetry-center {
+    display: none;
+  }
+  .oled-bezel {
+    aspect-ratio: 16 / 11;
+  }
+  .osd-columns {
+    grid-template-columns: 1fr;
+  }
+  .osd-col-epg {
+    display: none;
+  }
+  .manifesto-metrics {
+    grid-template-columns: 1fr;
+  }
+  .poster-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
