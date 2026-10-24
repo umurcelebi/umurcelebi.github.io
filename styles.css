@@ -1,13 +1,27 @@
 :root {
   --bg-obsidian: #000000;
+
   --bone: #ECEAE4;
   --bone-muted: rgba(236, 234, 228, 0.62);
   --bone-faint: rgba(236, 234, 228, 0.38);
+
   --champagne: #D6C7B2;
 
-  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-sans:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  --font-mono:
+    "JetBrains Mono",
+    monospace;
 }
+
+/* -------------------------------------------------------
+   Reset
+------------------------------------------------------- */
 
 *,
 *::before,
@@ -15,26 +29,30 @@
   box-sizing: border-box;
 }
 
-html,
+html {
+  margin: 0;
+  padding: 0;
+
+  background: var(--bg-obsidian);
+
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
-  min-height: 100%;
-  background-color: var(--bg-obsidian);
+
+  min-height: 100vh;
+
+  background: var(--bg-obsidian);
   color: var(--bone);
+
   font-family: var(--font-sans);
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
 
-html {
-  background: var(--bg-obsidian);
-}
-
-body {
-  min-height: 100vh;
   overflow-x: hidden;
-  position: relative;
 }
 
 ::selection {
@@ -49,8 +67,11 @@ body {
 .film-grain {
   position: fixed;
   inset: 0;
-  pointer-events: none;
+
   z-index: 99;
+
+  pointer-events: none;
+
   opacity: 0.04;
 
   background-image:
@@ -63,6 +84,7 @@ body {
 
 .cursor-spotlight {
   position: fixed;
+
   top: 50%;
   left: 50%;
 
@@ -81,6 +103,7 @@ body {
   transform: translate(-50%, -50%);
 
   pointer-events: none;
+
   z-index: 1;
 
   transition:
@@ -89,11 +112,644 @@ body {
 }
 
 /* -------------------------------------------------------
-   Main Stage
+   Hero Stage
 ------------------------------------------------------- */
 
 .monolith-stage {
   position: relative;
+
   z-index: 2;
 
-  width: 100
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    48px
+    6vw;
+
+  text-align: center;
+}
+
+/* -------------------------------------------------------
+   Background Glow
+------------------------------------------------------- */
+
+.hero-backdrop-glow {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 80vw;
+  max-width: 920px;
+
+  height: 440px;
+
+  transform:
+    translate(-50%, -55%);
+
+  background:
+    radial-gradient(
+      ellipse at center,
+      rgba(236, 234, 228, 0.065) 0%,
+      rgba(0, 0, 0, 0) 72%
+    );
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* -------------------------------------------------------
+   Brand Monument
+------------------------------------------------------- */
+
+.brand-monument {
+  width: 100%;
+  max-width: 780px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  animation:
+    fadeRise
+    1.2s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+}
+
+@keyframes fadeRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------------------------------
+   Logo
+------------------------------------------------------- */
+
+.logo-frame {
+  width:
+    min(
+      440px,
+      78vw
+    );
+
+  margin-bottom: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xubo-hero-logo {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  mix-blend-mode: lighten;
+
+  filter:
+    contrast(1.06)
+    drop-shadow(
+      0
+      0
+      48px
+      rgba(236, 234, 228, 0.08)
+    );
+
+  user-select: none;
+
+  -webkit-user-drag: none;
+}
+
+/* -------------------------------------------------------
+   Kicker
+------------------------------------------------------- */
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  margin-bottom: 28px;
+}
+
+.kicker-line {
+  width: 42px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(236, 234, 228, 0.35),
+      transparent
+    );
+}
+
+.mono-tag {
+  font-family: var(--font-mono);
+
+  font-size: 0.72rem;
+  font-weight: 300;
+
+  letter-spacing: 0.22em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  color: var(--champagne);
+}
+
+/* -------------------------------------------------------
+   Headline
+------------------------------------------------------- */
+
+.hero-headline {
+  margin:
+    0
+    0
+    22px;
+
+  font-size:
+    clamp(
+      2.1rem,
+      4.4vw,
+      3.85rem
+    );
+
+  font-weight: 300;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.035em;
+
+  color: var(--bone);
+}
+
+.headline-accent {
+  font-weight: 500;
+
+  background:
+    linear-gradient(
+      180deg,
+      #FFFFFF 0%,
+      #BEB9AE 100%
+    );
+
+  background-clip: text;
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
+}
+
+/* -------------------------------------------------------
+   Supporting Text
+------------------------------------------------------- */
+
+.hero-lead {
+  max-width: 610px;
+
+  margin:
+    0
+    0
+    48px;
+
+  font-size:
+    clamp(
+      0.98rem,
+      1.2vw,
+      1.14rem
+    );
+
+  font-weight: 300;
+
+  line-height: 1.72;
+
+  letter-spacing: -0.01em;
+
+  color: var(--bone-muted);
+}
+
+/* -------------------------------------------------------
+   Release Statement
+------------------------------------------------------- */
+
+.release-statement {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  padding:
+    13px
+    26px;
+
+  border-top:
+    1px solid
+    rgba(236, 234, 228, 0.14);
+
+  border-bottom:
+    1px solid
+    rgba(236, 234, 228, 0.14);
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(236, 234, 228, 0) 0%,
+      rgba(236, 234, 228, 0.035) 50%,
+      rgba(236, 234, 228, 0) 100%
+    );
+
+  user-select: none;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--champagne);
+
+  box-shadow:
+    0
+    0
+    12px
+    var(--champagne);
+
+  animation:
+    softPulse
+    2.8s
+    ease-in-out
+    infinite;
+}
+
+@keyframes softPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.92);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.18);
+  }
+}
+
+.release-text {
+  margin: 0;
+
+  font-family: var(--font-mono);
+
+  font-size:
+    clamp(
+      0.74rem,
+      1vw,
+      0.85rem
+    );
+
+  font-weight: 300;
+
+  line-height: 1.55;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+
+  color: var(--bone-muted);
+}
+
+.release-text strong {
+  color: var(--bone);
+
+  font-weight: 400;
+}
+
+/* -------------------------------------------------------
+   Legal Footer
+------------------------------------------------------- */
+
+.site-footer {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding:
+    22px
+    24px
+    30px;
+
+  background:
+    var(--bg-obsidian);
+}
+
+.privacy-link {
+  position: relative;
+
+  display: inline-block;
+
+  font-family:
+    var(--font-mono);
+
+  font-size: 9px;
+
+  font-weight: 300;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(
+      236,
+      234,
+      228,
+      0.30
+    );
+
+  text-decoration: none;
+
+  transition:
+    color
+    0.25s
+    ease;
+}
+
+.privacy-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -6px;
+
+  width: 0;
+  height: 1px;
+
+  background:
+    rgba(
+      236,
+      234,
+      228,
+      0.35
+    );
+
+  transform:
+    translateX(-50%);
+
+  transition:
+    width
+    0.25s
+    ease;
+}
+
+.privacy-link:hover {
+  color:
+    rgba(
+      236,
+      234,
+      228,
+      0.72
+    );
+}
+
+.privacy-link:hover::after {
+  width: 100%;
+}
+
+.privacy-link:focus-visible {
+  color:
+    var(--bone);
+
+  outline:
+    1px solid
+    rgba(
+      236,
+      234,
+      228,
+      0.35
+    );
+
+  outline-offset:
+    6px;
+}
+
+/* -------------------------------------------------------
+   Tablet
+------------------------------------------------------- */
+
+@media (max-width: 900px) {
+
+  .monolith-stage {
+    padding:
+      42px
+      5vw;
+  }
+
+  .hero-backdrop-glow {
+    width: 92vw;
+    height: 400px;
+  }
+
+  .logo-frame {
+    width:
+      min(
+        400px,
+        76vw
+      );
+  }
+
+}
+
+/* -------------------------------------------------------
+   Mobile
+------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+  .monolith-stage {
+    min-height: 100svh;
+
+    padding:
+      34px
+      24px;
+  }
+
+  .cursor-spotlight {
+    width: 520px;
+    height: 520px;
+  }
+
+  .hero-backdrop-glow {
+    width: 100vw;
+
+    height: 360px;
+
+    transform:
+      translate(-50%, -58%);
+  }
+
+  .logo-frame {
+    width:
+      min(
+        340px,
+        82vw
+      );
+
+    margin-bottom: 12px;
+  }
+
+  .hero-kicker {
+    gap: 10px;
+
+    margin-bottom: 24px;
+  }
+
+  .kicker-line {
+    width: 26px;
+  }
+
+  .mono-tag {
+    font-size: 0.66rem;
+
+    letter-spacing: 0.16em;
+  }
+
+  .hero-headline {
+    margin-bottom: 18px;
+
+    font-size:
+      clamp(
+        2rem,
+        10vw,
+        3rem
+      );
+
+    line-height: 1.08;
+  }
+
+  .hero-lead {
+    margin-bottom: 36px;
+
+    font-size: 0.96rem;
+
+    line-height: 1.65;
+  }
+
+  .release-statement {
+    width: 100%;
+
+    padding:
+      12px
+      16px;
+  }
+
+  .release-text {
+    font-size: 0.72rem;
+
+    letter-spacing: 0.08em;
+  }
+
+  .site-footer {
+    padding:
+      18px
+      20px
+      24px;
+  }
+
+  .privacy-link {
+    font-size: 8px;
+
+    letter-spacing: 0.12em;
+  }
+
+}
+
+/* -------------------------------------------------------
+   Very Small Screens
+------------------------------------------------------- */
+
+@media (max-width: 380px) {
+
+  .monolith-stage {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .hero-kicker {
+    gap: 8px;
+  }
+
+  .kicker-line {
+    width: 20px;
+  }
+
+  .mono-tag {
+    font-size: 0.61rem;
+  }
+
+  .release-statement {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .release-text {
+    font-size: 0.68rem;
+  }
+
+}
+
+/* -------------------------------------------------------
+   Reduced Motion
+------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+
+    animation-duration:
+      0.01ms !important;
+
+    animation-iteration-count:
+      1 !important;
+
+    transition-duration:
+      0.01ms !important;
+  }
+
+  .brand-monument {
+    opacity: 1;
+
+    transform: none;
+  }
+
+}
