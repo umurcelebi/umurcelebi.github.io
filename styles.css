@@ -4,25 +4,37 @@
   --bone-muted: rgba(236, 234, 228, 0.62);
   --bone-faint: rgba(236, 234, 228, 0.38);
   --champagne: #D6C7B2;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html,
 body {
-  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
   background-color: var(--bg-obsidian);
   color: var(--bone);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  background: var(--bg-obsidian);
+}
+
+body {
+  min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
 }
 
 ::selection {
@@ -30,208 +42,77 @@ body {
   color: var(--bg-obsidian);
 }
 
-/* Analog Film Grain Overlay matching the XUBO logo aesthetic */
+/* -------------------------------------------------------
+   Film Grain
+------------------------------------------------------- */
+
 .film-grain {
   position: fixed;
   inset: 0;
   pointer-events: none;
   z-index: 99;
   opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-/* Subtle Spotlight following cursor */
+/* -------------------------------------------------------
+   Cursor Spotlight
+------------------------------------------------------- */
+
 .cursor-spotlight {
   position: fixed;
+  top: 50%;
+  left: 50%;
   width: 720px;
   height: 720px;
+
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(236, 234, 228, 0.05) 0%, rgba(236, 234, 228, 0) 68%);
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(236, 234, 228, 0.05) 0%,
+      rgba(236, 234, 228, 0) 68%
+    );
+
+  transform: translate(-50%, -50%);
+
   pointer-events: none;
   z-index: 1;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  transition: opacity 0.4s ease;
+
+  transition:
+    opacity 0.4s ease,
+    transform 0.08s linear;
 }
 
-/* Main Full-Viewport Centered Stage */
+/* -------------------------------------------------------
+   Main Stage
+------------------------------------------------------- */
+
 .monolith-stage {
-  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+
   width: 100%;
-  padding: 48px 6vw;
+  min-height: 100vh;
+
+  padding: 48px 6vw 110px;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   text-align: center;
-  position: relative;
-  z-index: 2;
 }
+
+/* -------------------------------------------------------
+   Background Glow
+------------------------------------------------------- */
 
 .hero-backdrop-glow {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -55%);
-  width: 80vw;
-  max-width: 920px;
-  height: 440px;
-  background: radial-gradient(ellipse at center, rgba(236, 234, 228, 0.065) 0%, rgba(0, 0, 0, 0) 72%);
-  pointer-events: none;
-  z-index: -1;
-}
 
-.brand-monument {
-  max-width: 780px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  animation: fadeRise 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-@keyframes fadeRise {
-  0% {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.logo-frame {
-  width: min(440px, 78vw);
-  margin-bottom: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.xubo-hero-logo {
-  width: 100%;
-  height: auto;
-  display: block;
-  mix-blend-mode: lighten;
-  filter: contrast(1.06) drop-shadow(0 0 48px rgba(236, 234, 228, 0.08));
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-.hero-kicker {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 28px;
-}
-
-.kicker-line {
-  width: 42px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(236, 234, 228, 0.35), transparent);
-}
-
-.mono-tag {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--champagne);
-}
-
-.hero-headline {
-  font-weight: 300;
-  font-size: clamp(2.1rem, 4.4vw, 3.85rem);
-  line-height: 1.1;
-  letter-spacing: -0.035em;
-  color: var(--bone);
-  margin-bottom: 22px;
-}
-
-.headline-accent {
-  font-weight: 500;
-  background: linear-gradient(180deg, #FFFFFF 0%, #BEB9AE 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero-lead {
-  font-size: clamp(0.98rem, 1.2vw, 1.14rem);
-  line-height: 1.72;
-  color: var(--bone-muted);
-  max-width: 610px;
-  font-weight: 300;
-  letter-spacing: -0.01em;
-  margin-bottom: 48px;
-}
-
-/* Platform Availability Statement (Non-button, architectural pill/line) */
-.release-statement {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 13px 26px;
-  border-top: 1px solid rgba(236, 234, 228, 0.14);
-  border-bottom: 1px solid rgba(236, 234, 228, 0.14);
-  background: linear-gradient(90deg, rgba(236, 234, 228, 0) 0%, rgba(236, 234, 228, 0.035) 50%, rgba(236, 234, 228, 0) 100%);
-  user-select: none;
-}
-
-.pulse-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--champagne);
-  box-shadow: 0 0 12px var(--champagne);
-  flex-shrink: 0;
-  animation: softPulse 2.8s infinite ease-in-out;
-}
-
-@keyframes softPulse {
-  0%, 100% {
-    opacity: 0.45;
-    transform: scale(0.92);
-  }
-  50% {
-    opacity: 1;
-    transform: scale(1.18);
-  }
-}
-
-.release-text {
-  font-family: var(--font-mono);
-  font-size: clamp(0.74rem, 1vw, 0.85rem);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--bone-muted);
-  font-weight: 300;
-}
-
-.release-text strong {
-  color: var(--bone);
-  font-weight: 400;
-}
-
-.site-footer {
-  position: fixed;
-  bottom: 24px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  z-index: 10;
-}
-
-.privacy-link {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.45);
-  text-decoration: none;
-  transition: color 0.25s ease, opacity 0.25s ease;
-}
-
-.privacy-link:hover {
-  color: rgba(255, 255, 255, 0.85);
-}
+  top
