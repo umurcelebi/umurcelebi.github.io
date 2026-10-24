@@ -3,57 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="XUBO is a premium IPTV media player for Xbox Series X/S and Samsung Tizen OS."
+  />
+
+  <meta name="robots" content="index, follow" />
+
   <title>XUBO — IPTV Player</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+
   <!-- Subtle Analog Film Grain Overlay -->
-  <div class="film-grain" aria-hidden="true"></div>
+  <div
+    class="film-grain"
+    aria-hidden="true"
+  ></div>
 
   <!-- Ambient Studio Spotlight -->
-  <div class="cursor-spotlight" id="cursorSpotlight" aria-hidden="true"></div>
+  <div
+    class="cursor-spotlight"
+    id="cursorSpotlight"
+    aria-hidden="true"
+  ></div>
 
   <main class="monolith-stage">
-    <div class="hero-backdrop-glow" aria-hidden="true"></div>
 
-    <div class="brand-monument">
+    <!-- Ambient Backdrop Glow -->
+    <div
+      class="hero-backdrop-glow"
+      aria-hidden="true"
+    ></div>
+
+    <section
+      class="brand-monument"
+      aria-labelledby="xubo-heading"
+    >
+
+      <!-- XUBO Logo -->
       <div class="logo-frame">
-        <img src="xubo-logo.png" alt="XUBO" class="xubo-hero-logo" />
+        <img
+          src="xubo-logo.png"
+          alt="XUBO"
+          class="xubo-hero-logo"
+          draggable="false"
+        />
       </div>
 
+      <!-- Product Category -->
       <div class="hero-kicker">
-        <span class="kicker-line"></span>
-        <span class="mono-tag">PREMIUM IPTV PLAYER</span>
-        <span class="kicker-line"></span>
+        <span
+          class="kicker-line"
+          aria-hidden="true"
+        ></span>
+
+        <span class="mono-tag">
+          Premium IPTV Player
+        </span>
+
+        <span
+          class="kicker-line"
+          aria-hidden="true"
+        ></span>
       </div>
 
-      <h1 class="hero-headline">
+      <!-- Main Headline -->
+      <h1
+        class="hero-headline"
+        id="xubo-heading"
+      >
         Entertainment in its purest,<br />
-        <span class="headline-accent">most seamless form.</span>
+        <span class="headline-accent">
+          most seamless form.
+        </span>
       </h1>
 
-      <p class="hero-lead">
-        Premium IPTV Features — Completely Free.
-      </p>
-
-<div class="release-statement">
-  <span class="pulse-dot" aria-hidden="true"></span>
-  <p class="release-text">
-    Coming soon to <strong>Xbox Series X/S</strong> and <strong>Samsung Tizen OS</strong>
-  </p>
-</div>
-
-<div class="legal-links">
-  <a href="privacy.html" class="privacy-link">Privacy Policy</a>
-</div>
-    </div>
-  </main>
-
-
-
-  <script src="app.js"></script>
-</body>
-</html>
+      <!-- Supporting
