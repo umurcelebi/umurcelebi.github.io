@@ -212,3 +212,26 @@ body {
   color: var(--bone);
   font-weight: 400;
 }
+
+.site-footer {
+  position: fixed;
+  bottom: 24px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.privacy-link {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.privacy-link:hover {
+  color: rgba(255, 255, 255, 0.85);
+}
