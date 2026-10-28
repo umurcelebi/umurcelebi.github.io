@@ -8,17 +8,17 @@ const I18N = {
     // Navigation
     nav_screens: 'Arayüz',
     nav_architecture: 'Mimarisi',
-    nav_devices: 'Cihazlar',
+    nav_devices: 'Tüm Platformlar',
     nav_privacy: 'Gizlilik',
     nav_beta_cta: 'Beta İndir',
     nav_home: 'XUBO Tanıtım',
 
     // Hero
-    hero_badge: '✦ Yeni Nesil IPTV Deneyimi',
+    hero_badge: '✦ Tüm Cihazlar & Tüm Platformlar',
     hero_badge_sub: 'Android TV & Mobil Beta Yayında',
-    hero_h1_lead: 'Televizyonunuz İçin',
+    hero_h1_lead: 'Tüm Ekranlarınızda',
     hero_h1_grad: 'Kusursuz Medya Sahnesi.',
-    hero_lead: 'Yüksek performans, sıfır karmaşa. XUBO; Xtream ve M3U oynatma listelerinizi ultra akıcı, modern ve sinematik bir OLED arayüzüyle buluşturan yeni nesil medya oynatıcısıdır.',
+    hero_lead: 'Yüksek performans, sıfır karmaşa. XUBO; televizyondan bilgisayara, tabletten telefona tüm cihazlarınızda Xtream ve M3U oynatma listelerinizi ultra akıcı, modern ve sinematik bir OLED arayüzüyle buluşturan yeni nesil medya oynatıcısıdır.',
     hero_btn_dl: 'Android Beta Sürümünü İndir (APK)',
     hero_btn_explore: 'Arayüzü İncele',
 
@@ -51,7 +51,7 @@ const I18N = {
     // Bento Grid (Features)
     bento_eyebrow: 'TEKNİK MİMARİ',
     bento_h2: 'Gelişmiş Performans, Kusursuz Kontrol.',
-    bento_desc: 'Gereksiz karmaşadan arındırılmış, doğrudan kumanda ergonomisine odaklanan modern IPTV motoru.',
+    bento_desc: 'Gereksiz karmaşadan arındırılmış, televizyon kumandasından mobil dokunmatiğe kadar her cihaza özel ergonomi.',
     
     bento_1_title: 'Anlık Kanal Değişimi ve Akıllı EPG',
     bento_1_desc: 'Arka planda optimize edilen akış tamponlaması sayesinde kanal değiştirirken ekran donmaz. Kategorize edilmiş liste, anlık yayın akışı, program detayları ve sayı tuşlarıyla doğrudan kanal atlama desteği sunar.',
@@ -68,10 +68,10 @@ const I18N = {
     bento_5_title: 'Geniş Format ve Ses/Altyazı Desteği',
     bento_5_desc: 'HLS, TS, MP4 ve MKV kapsayıcıları ile tam uyum. Yayın anında çoklu ses dilleri ve harici altyazılar arasında tek dokunuşla geçiş yapabilme imkanı.',
 
-    // Platforms
-    eco_eyebrow: 'PLATFORM DESTEĞİ',
+    // Platforms (8 Platforms)
+    eco_eyebrow: 'PLATFORM EKOSİSTEMİ',
     eco_h2: 'Tüm Ekranlarınızda Tek Standart.',
-    eco_desc: 'Farklı işletim sistemlerinde aynı tutarlı hız ve sinematik koyu arayüz.',
+    eco_desc: 'Televizyon, bilgisayar, tablet ve telefon: Farklı işletim sistemlerinde aynı tutarlı hız ve sinematik koyu arayüz.',
     
     eco_android_title: 'Android',
     eco_android_desc: 'Telefon, Tablet, Android TV ve Google TV cihazları için optimize edildi.',
@@ -92,6 +92,26 @@ const I18N = {
     eco_xbox_desc: 'Xbox oyun kumandası ile tam uyumlu 4K HDR oynatma deneyimi.',
     eco_xbox_badge: 'Hazırlanıyor',
     eco_xbox_status: 'Yakında Microsoft Store\'da',
+
+    eco_windows_title: 'Windows',
+    eco_windows_desc: 'Windows 10 ve 11 masaüstü ve dizüstü bilgisayarlar için bağımsız oynatıcı uygulaması.',
+    eco_windows_badge: 'Yakında',
+    eco_windows_status: 'Yakında Windows İçin Yayında',
+
+    eco_macos_title: 'macOS',
+    eco_macos_desc: 'Apple Silicon (M1/M2/M3/M4) ve Intel Mac cihazları için yüksek performanslı masaüstü arayüzü.',
+    eco_macos_badge: 'Yakında',
+    eco_macos_status: 'Yakında Mac App Store\'da',
+
+    eco_ios_title: 'iOS (iPhone)',
+    eco_ios_desc: 'iPhone ekranları için özel olarak tasarlanmış, tek elle kullanılan akıcı mobil deneyim.',
+    eco_ios_badge: 'Yakında',
+    eco_ios_status: 'Yakında App Store\'da',
+
+    eco_ipados_title: 'iPadOS (iPad)',
+    eco_ipados_desc: 'Geniş Retina ekran, Apple Pencil ve Sahne Yöneticisi (Stage Manager) ile çoklu görev uyumu.',
+    eco_ipados_badge: 'Yakında',
+    eco_ipados_status: 'Yakında iPadOS İçin Yayında',
 
     // Download Hub
     hub_badge: 'Açık Beta Dağıtımı',
@@ -125,17 +145,17 @@ const I18N = {
     // Navigation
     nav_screens: 'Interface',
     nav_architecture: 'Architecture',
-    nav_devices: 'Platforms',
+    nav_devices: 'All Platforms',
     nav_privacy: 'Privacy',
     nav_beta_cta: 'Download Beta',
     nav_home: 'XUBO Home',
 
     // Hero
-    hero_badge: '✦ Next-Gen IPTV Experience',
+    hero_badge: '✦ All Devices & All Platforms',
     hero_badge_sub: 'Android TV & Mobile Beta Live',
-    hero_h1_lead: 'The Ultimate Media Stage',
-    hero_h1_grad: 'For Your Television.',
-    hero_lead: 'High performance, zero clutter. XUBO brings your Xtream and M3U playlists to life with an ultra-fluid, modern, and cinematic OLED interface.',
+    hero_h1_lead: 'Across All Your Screens,',
+    hero_h1_grad: 'The Ultimate Media Stage.',
+    hero_lead: 'High performance, zero clutter. XUBO brings your Xtream and M3U playlists to life across televisions, computers, tablets, and phones with an ultra-fluid, modern, and cinematic OLED interface.',
     hero_btn_dl: 'Download Android Beta (APK)',
     hero_btn_explore: 'Explore Interface',
 
@@ -168,7 +188,7 @@ const I18N = {
     // Bento Grid (Features)
     bento_eyebrow: 'TECHNICAL ARCHITECTURE',
     bento_h2: 'Advanced Performance, Flawless Control.',
-    bento_desc: 'Stripped of unnecessary complexity, engineered directly for television remote ergonomics.',
+    bento_desc: 'Stripped of unnecessary complexity, engineered directly for TV remotes, mouse input, and touchscreens alike.',
     
     bento_1_title: 'Instant Channel Zapping & Smart EPG',
     bento_1_desc: 'Optimized background stream buffering eliminates frozen screens when changing channels. Categorized lists, instant programme schedules, and numeric remote shortcut support.',
@@ -185,10 +205,10 @@ const I18N = {
     bento_5_title: 'Broad Format, Audio & Subtitle Support',
     bento_5_desc: 'Full compatibility with HLS, TS, MP4, and MKV streams. Effortlessly toggle between multiple audio language tracks and internal or external subtitles on the fly.',
 
-    // Platforms
+    // Platforms (8 Platforms)
     eco_eyebrow: 'PLATFORM ECOSYSTEM',
     eco_h2: 'One Standard Across All Your Screens.',
-    eco_desc: 'Uniform fluid speed and a cinematic dark aesthetic across every smart TV operating system.',
+    eco_desc: 'Television, PC, tablet, or phone: Uniform fluid speed and a cinematic dark aesthetic across every operating system.',
     
     eco_android_title: 'Android',
     eco_android_desc: 'Fine-tuned for Phone, Tablet, Android TV, and Google TV devices.',
@@ -209,6 +229,26 @@ const I18N = {
     eco_xbox_desc: 'Full 4K HDR playback tailored for Xbox controllers and gaming consoles.',
     eco_xbox_badge: 'In Progress',
     eco_xbox_status: 'Coming Soon to Microsoft Store',
+
+    eco_windows_title: 'Windows',
+    eco_windows_desc: 'Standalone media player engineered for Windows 10 and 11 desktop and laptop PCs.',
+    eco_windows_badge: 'Coming Soon',
+    eco_windows_status: 'Coming Soon for Windows',
+
+    eco_macos_title: 'macOS',
+    eco_macos_desc: 'High-performance native desktop client for Apple Silicon (M1–M4) and Intel Macs.',
+    eco_macos_badge: 'Coming Soon',
+    eco_macos_status: 'Coming Soon to Mac App Store',
+
+    eco_ios_title: 'iOS (iPhone)',
+    eco_ios_desc: 'Fluid, one-hand touch-optimized mobile experience designed specifically for iPhone.',
+    eco_ios_badge: 'Coming Soon',
+    eco_ios_status: 'Coming Soon to App Store',
+
+    eco_ipados_title: 'iPadOS (iPad)',
+    eco_ipados_desc: 'Optimized for iPad Liquid Retina displays, Apple Pencil, and Stage Manager multitasking.',
+    eco_ipados_badge: 'Coming Soon',
+    eco_ipados_status: 'Coming Soon for iPadOS',
 
     // Download Hub
     hub_badge: 'Open Beta Release',
