@@ -1,0 +1,24 @@
+{
+  "versionName": "1.1.2",
+  "versionCode": 125,
+  "minRequiredVersion": 100,
+  "releaseDate": "2026-10-28",
+  "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/XUBO_IPTV_1.1.2.apk",
+  "apkFileName": "XUBO_IPTV_1.1.2.apk",
+  "fileSize": 15995857,
+  "sha256": "d50a4a7275c51cf0dea35c5600c0e1da33b8c53b19e2a3efd58d9cb8d258d469",
+  "packageName": "com.xubo.iptv.test",
+  "forceUpdate": false,
+  "changelog": {
+    "tr": [
+      "Canlı TV ve EPG program akışında performans iyileştirmeleri",
+      "VOD ve dizi oynatıcı motorunda kararlılık güncellemeleri",
+      "Çoklu profil ve Xtream/M3U bağlantı optimizasyonları"
+    ],
+    "en": [
+      "Performance improvements in Live TV and EPG guide streaming",
+      "Stability updates in VOD cinema and series playback engine",
+      "Multi-profile and Xtream/M3U connection optimizations"
+    ]
+  }
+}
