@@ -1,26 +1,26 @@
 {
-  "versionName": "1.1.10",
-  "versionCode": 134,
+  "versionName": "1.1.11",
+  "versionCode": 135,
   "minRequiredVersion": 100,
-  "releaseDate": "2026-10-28",
+  "releaseDate": "2026-10-29",
   "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/xubo-iptv.apk",
   "apkFileName": "xubo-iptv.apk",
-  "fileSize": 16028643,
-  "sha256": "bfe4f9038f2aef62386c027256dbf248e882f33bacc9128765a69a80415365ea",
+  "fileSize": 16032835,
+  "sha256": "b043b735eddedbaa8b2e5460a07faabb685507cdb4ff73dcd7ed21ba68ad041d",
   "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
-      "Ayarlar ekranına her girişte ekranın en başından (tepeden) açılması sağlandı (scroll konumu sıfırlanır)",
-      "Televizyon ve kumanda ile giriş (login) süreci derinlemesine iyileştirildi: D-pad ile tüm alanlar arasında kesintisiz iki yönlü geçiş sağlandı",
-      "TV kumandası ile gezinirken sanal klavyenin zamansız açılması engellendi, sadece OK tuşuna basıldığında açılması sağlandı",
-      "Google Drive AppData yedekleme ve geri yükleme arayüzü Ayarlar ekranına entegre edildi; çevrimdışı JSON yedekleme desteği eklendi"
+      "Güncelleme kurulumu sırasında izin verilip dönüldüğünde kurulumun takılması sorunu giderildi; izin sonrası kurulum otomatik devam eder",
+      "Tüm simgeler ve ikonlar renksiz, flat ve minimalist vektör formatına kavuşturuldu",
+      "Sade ve şık Siyah-Amber (Black & Amber) tema paletine geçildi, arayüz renk karmaşasından arındırıldı",
+      "Performans ve kararlılık iyileştirmeleri sağlandı"
     ],
     "en": [
-      "Settings screen scroll position is now reset to the very top every time it is opened",
-      "Overhauled TV remote login navigation: full bidirectional D-pad traversals across all input fields without skipping or trapping",
-      "Soft virtual keyboard on Android TV now opens strictly when OK is pressed, preventing unwanted IME popups during navigation",
-      "Integrated Google Drive AppData backup & restore UI into Settings, plus offline JSON backup support"
+      "Fixed update install pausing when granting unknown app install permission; installation resumes automatically upon return",
+      "All icons converted to flat, monochrome vector glyphs for a clean minimalist experience",
+      "Adopted premium Black & Amber theme duo, eliminating multi-color noise",
+      "Performance and stability enhancements"
     ]
   }
 }
