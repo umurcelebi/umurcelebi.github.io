@@ -1,24 +1,26 @@
 {
-  "versionName": "1.1.7",
-  "versionCode": 131,
+  "versionName": "1.1.8",
+  "versionCode": 132,
   "minRequiredVersion": 100,
   "releaseDate": "2026-10-28",
-  "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/XUBO_IPTV_1.1.7.apk",
-  "apkFileName": "XUBO_IPTV_1.1.7.apk",
-  "fileSize": 16016355,
-  "sha256": "6b959afa027dcc35dd9926a976e90f86ccfebad0f8149ed0a3b2a0ef578c85d4",
+  "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/XUBO_IPTV_1.1.8.apk",
+  "apkFileName": "XUBO_IPTV_1.1.8.apk",
+  "fileSize": 16020451,
+  "sha256": "6e4fd2414ebdc2cd169fb6527973747423bb70a5116e91d37a735845ae2648d7",
   "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
-      "Ayarlar ekranına doğrudan web sitesine yönlendiren resmi bağlantı eklendi",
-      "Telefon ve dokunmatik cihazlarda TV modu algılama ve yönlendirme kararlılığı optimize edildi",
-      "Performans iyileştirmeleri ve hata düzeltmeleri"
+      "Uygulama içi doğrudan güncelleme indirici ve yükleyici entegre edildi (Android TV ve Mi Stick için tarayıcısız doğrudan APK kurulumu ve canlı yüzde göstergesi)",
+      "Açılışta otomatik yeni sürüm denetimi ve güncelleme onay penceresi",
+      "Cep telefonlarında dikey modda giriş ekranı dokunmatik buton algılama ve klavye Enter/Git geçişleri optimize edildi",
+      "Ayarlar menüsüne resmi web sitesi bağlantısı"
     ],
     "en": [
-      "Added official website link to the Settings screen",
-      "Optimized TV mode detection and orientation stability on mobile devices",
-      "Performance improvements and bug fixes"
+      "Integrated native in-app self-updater with live progress percentage (browser-free updates for Android TV and Mi Stick)",
+      "Automatic update check on startup with user confirmation dialog",
+      "Optimized mobile portrait login touch responsiveness and keyboard Enter/Done actions",
+      "Official website link in Settings"
     ]
   }
 }
