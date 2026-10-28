@@ -1,26 +1,24 @@
 {
-  "versionName": "1.1.6",
-  "versionCode": 130,
+  "versionName": "1.1.7",
+  "versionCode": 131,
   "minRequiredVersion": 100,
   "releaseDate": "2026-10-28",
-  "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/XUBO_IPTV_1.1.6.apk",
-  "apkFileName": "XUBO_IPTV_1.1.6.apk",
+  "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/XUBO_IPTV_1.1.7.apk",
+  "apkFileName": "XUBO_IPTV_1.1.7.apk",
   "fileSize": 16016355,
-  "sha256": "c081bc23b5afa4a7adbe674a286940396bd5eafc5dc30b7940b4f45d0a012807",
+  "sha256": "6b959afa027dcc35dd9926a976e90f86ccfebad0f8149ed0a3b2a0ef578c85d4",
   "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
-      "Telefon ve dokunmatik cihazlarda TV modu algılama sorunu düzeltildi (yatay zorlama, büyük TV menüsü ve kumanda odak çerçeveleri kaldırıldı)",
-      "Ekran yönü döndürme ayarı telefonlarda tekrar aktif hale getirildi",
-      "Mobil tam ekran oynatıcı kontrolleri ve dokunma stabilitesi iyileştirildi",
-      "Uygulama içi güncelleme indir butonu için yerel Android tarayıcı/indirme köprüsü entegrasyonu"
+      "Ayarlar ekranına doğrudan web sitesine yönlendiren resmi bağlantı eklendi",
+      "Telefon ve dokunmatik cihazlarda TV modu algılama ve yönlendirme kararlılığı optimize edildi",
+      "Performans iyileştirmeleri ve hata düzeltmeleri"
     ],
     "en": [
-      "Fixed TV mode detection bug on mobile touch devices (eliminated forced landscape, TV sidebar, and remote focus outlines)",
-      "Screen orientation settings re-enabled for smartphones and tablets",
-      "Mobile fullscreen player controls and touch stability improvements",
-      "Integrated native Android browser/download intent bridge for in-app update downloads"
+      "Added official website link to the Settings screen",
+      "Optimized TV mode detection and orientation stability on mobile devices",
+      "Performance improvements and bug fixes"
     ]
   }
 }
