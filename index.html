@@ -9,13 +9,13 @@
   <style>
     :root {
       --bg: #040507;
-      --card: #0c1017;
-      --card-hover: #121824;
+      --card: #0c0f16;
+      --card-hover: #131824;
       --border: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(0, 229, 255, 0.35);
-      --cyan: #00e5ff;
-      --cyan-bright: #38bdf8;
-      --cyan-glow: rgba(0, 229, 255, 0.2);
+      --border-hover: rgba(245, 158, 11, 0.4);
+      --amber: #f59e0b;
+      --amber-bright: #fbbf24;
+      --amber-glow: rgba(245, 158, 11, 0.22);
       --text: #ffffff;
       --text-muted: #94a3b8;
       --text-dim: #64748b;
@@ -34,8 +34,8 @@
       min-height: 100vh;
       background-color: var(--bg);
       background-image: 
-        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(56, 189, 248, 0.12) 0%, transparent 60%),
-        radial-gradient(circle 400px at 80% 30%, rgba(99, 102, 241, 0.08) 0%, transparent 60%);
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(245, 158, 11, 0.12) 0%, transparent 60%),
+        radial-gradient(circle 400px at 80% 30%, rgba(217, 119, 6, 0.08) 0%, transparent 60%);
       color: var(--text);
       font-family: var(--font-sans);
       display: flex;
@@ -64,9 +64,9 @@
       font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--cyan);
-      background: rgba(0, 229, 255, 0.1);
-      border: 1px solid rgba(0, 229, 255, 0.25);
+      color: var(--amber-bright);
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
       padding: 5px 14px;
       border-radius: 999px;
       margin-bottom: 20px;
@@ -94,7 +94,7 @@
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--cyan);
+      color: var(--amber-bright);
       margin: 0 0 20px;
     }
 
@@ -119,7 +119,7 @@
       inset: 0;
       border-radius: 24px;
       padding: 1px;
-      background: linear-gradient(135deg, rgba(0, 229, 255, 0.35), transparent 70%);
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.4), transparent 70%);
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
@@ -129,7 +129,7 @@
     .featured-card:hover {
       transform: translateY(-4px);
       border-color: var(--border-hover);
-      box-shadow: 0 24px 60px -15px var(--cyan-glow), 0 16px 40px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 24px 60px -15px var(--amber-glow), 0 16px 40px rgba(0, 0, 0, 0.6);
     }
 
     .card-top {
@@ -149,7 +149,7 @@
       width: 52px;
       height: 52px;
       border-radius: 14px;
-      box-shadow: 0 4px 16px rgba(0, 229, 255, 0.25);
+      box-shadow: 0 4px 16px rgba(245, 158, 11, 0.25);
     }
 
     .card-brand-text h2 {
@@ -170,9 +170,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(0, 229, 255, 0.12);
-      color: var(--cyan);
-      border: 1px solid rgba(0, 229, 255, 0.3);
+      background: rgba(245, 158, 11, 0.14);
+      color: var(--amber-bright);
+      border: 1px solid rgba(245, 158, 11, 0.35);
       padding: 5px 14px;
       border-radius: 999px;
       font-size: 12px;
@@ -223,13 +223,13 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      color: var(--cyan);
+      color: var(--amber-bright);
       font-weight: 750;
       font-size: 15px;
     }
 
     .featured-card:hover .card-cta {
-      color: var(--cyan-bright);
+      color: #fde68a;
     }
 
     footer {
@@ -248,7 +248,7 @@
     }
 
     footer a:hover {
-      color: var(--cyan);
+      color: var(--amber-bright);
     }
   </style>
 </head>

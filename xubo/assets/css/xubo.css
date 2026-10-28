@@ -1,33 +1,33 @@
 /* ==========================================================================
    XUBO — Next-Gen IPTV Media Player
-   Bespoke, Original Design: Dark Titanium, Cyber-OLED & Glassmorphism
+   Bespoke Design: Dark Titanium, Cyber-OLED & Warm Amber Luminescence
    ========================================================================== */
 
 :root {
   --bg-core: #040507;
-  --bg-deep: #07090e;
-  --bg-surface: #0c1017;
-  --bg-glass: rgba(15, 20, 30, 0.72);
-  --bg-glass-hover: rgba(22, 30, 46, 0.85);
-  --bg-card: #0f141f;
+  --bg-deep: #07090d;
+  --bg-surface: #0b0e14;
+  --bg-glass: rgba(14, 18, 26, 0.76);
+  --bg-glass-hover: rgba(22, 28, 40, 0.88);
+  --bg-card: #0f131c;
 
   --border-glass: rgba(255, 255, 255, 0.08);
-  --border-glass-hover: rgba(56, 189, 248, 0.35);
-  --border-subtle: #171d2b;
+  --border-glass-hover: rgba(245, 158, 11, 0.4);
+  --border-subtle: #171c26;
 
-  /* Brand Accents: Electric Cyan & Deep Violet-Indigo */
-  --cyan: #00e5ff;
-  --cyan-bright: #38bdf8;
-  --cyan-glow: rgba(0, 229, 255, 0.22);
-  --cyan-subtle: rgba(56, 189, 248, 0.12);
-
-  --indigo: #6366f1;
-  --indigo-glow: rgba(99, 102, 241, 0.25);
+  /* Brand Accent: Warm Amber & Golden Titanium */
+  --amber: #f59e0b;
+  --amber-bright: #fbbf24;
+  --amber-light: #fef3c7;
+  --amber-glow: rgba(245, 158, 11, 0.28);
+  --amber-subtle: rgba(245, 158, 11, 0.12);
+  --amber-border: rgba(245, 158, 11, 0.35);
+  --amber-gradient: linear-gradient(135deg, #fbbf24 0%, #f59e0b 60%, #d97706 100%);
 
   --text-primary: #ffffff;
   --text-secondary: #cbd5e1;
-  --text-muted: #8492a6;
-  --text-dim: #4e596d;
+  --text-muted: #94a3b8;
+  --text-dim: #546075;
 
   --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, Arial, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -59,8 +59,8 @@ body {
   color: var(--text-secondary);
   background-color: var(--bg-core);
   background-image: 
-    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(56, 189, 248, 0.14) 0%, transparent 60%),
-    radial-gradient(circle 500px at 85% 20%, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
+    radial-gradient(ellipse 90% 60% at 50% -10%, rgba(245, 158, 11, 0.14) 0%, transparent 60%),
+    radial-gradient(circle 500px at 85% 20%, rgba(217, 119, 6, 0.08) 0%, transparent 70%);
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -74,17 +74,17 @@ img {
 }
 
 a {
-  color: var(--cyan-bright);
+  color: var(--amber-bright);
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
 a:hover {
-  color: #7dd3fc;
+  color: #fde68a;
 }
 
 :focus-visible {
-  outline: 2px solid var(--cyan);
+  outline: 2px solid var(--amber);
   outline-offset: 4px;
   border-radius: 8px;
 }
@@ -137,7 +137,7 @@ a:hover {
   width: 34px;
   height: 34px;
   border-radius: 9px;
-  box-shadow: 0 2px 10px rgba(0, 229, 255, 0.25);
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
 }
 
 .nav-brand .pulse-indicator {
@@ -147,9 +147,9 @@ a:hover {
   font-size: 11px;
   font-family: var(--font-mono);
   font-weight: 700;
-  color: var(--cyan);
-  background: var(--cyan-subtle);
-  border: 1px solid rgba(0, 229, 255, 0.3);
+  color: var(--amber-bright);
+  background: var(--amber-subtle);
+  border: 1px solid var(--amber-border);
   padding: 2px 8px;
   border-radius: var(--radius-pill);
 }
@@ -158,8 +158,8 @@ a:hover {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--cyan);
-  box-shadow: 0 0 8px var(--cyan);
+  background: var(--amber);
+  box-shadow: 0 0 8px var(--amber);
   animation: pulseAnim 2s infinite ease-in-out;
 }
 
@@ -171,7 +171,7 @@ a:hover {
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 20px;
   font-size: 14px;
   font-weight: 500;
 }
@@ -184,22 +184,63 @@ a:hover {
   color: var(--text-primary);
 }
 
-.btn-nav-cta {
-  background: linear-gradient(135deg, #00e5ff 0%, #38bdf8 100%);
-  color: #030712 !important;
+/* Language Switcher */
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-pill);
+  padding: 2px 4px;
+  gap: 2px;
+  font-size: 12px;
+  font-family: var(--font-mono);
   font-weight: 700;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.lang-btn:hover {
+  color: var(--text-primary);
+}
+
+.lang-btn.is-active {
+  background: var(--amber);
+  color: #040507;
+}
+
+.lang-sep {
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 11px;
+}
+
+.btn-nav-cta {
+  background: var(--amber-gradient);
+  color: #040507 !important;
+  font-weight: 750;
   padding: 8px 18px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 4px 16px rgba(0, 229, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-nav-cta:hover {
   transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(0, 229, 255, 0.45);
+  box-shadow: 0 6px 22px rgba(245, 158, 11, 0.5);
 }
 
-@media (max-width: 680px) {
+@media (max-width: 720px) {
   .nav-menu a.nav-opt {
     display: none;
   }
@@ -230,7 +271,7 @@ a:hover {
 }
 
 .hero-pill-badge span.tag-highlight {
-  color: var(--cyan);
+  color: var(--amber-bright);
   font-weight: 700;
 }
 
@@ -245,7 +286,7 @@ a:hover {
 }
 
 .hero-stage h1 .gradient-text {
-  background: linear-gradient(135deg, #ffffff 30%, #38bdf8 70%, #818cf8 100%);
+  background: linear-gradient(135deg, #ffffff 30%, #fbbf24 70%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -271,20 +312,20 @@ a:hover {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: linear-gradient(135deg, #00e5ff 0%, #0284c7 100%);
-  color: #020617;
+  background: var(--amber-gradient);
+  color: #040507;
   font-size: 17px;
   font-weight: 750;
   padding: 14px 30px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 10px 32px -4px var(--cyan-glow);
+  box-shadow: 0 10px 32px -4px var(--amber-glow);
   transition: all 0.25s ease;
 }
 
 .btn-glow-primary:hover {
   color: #000000;
   transform: translateY(-2px);
-  box-shadow: 0 14px 40px -2px rgba(0, 229, 255, 0.4);
+  box-shadow: 0 14px 40px -2px rgba(245, 158, 11, 0.45);
 }
 
 .btn-glass-secondary {
@@ -329,7 +370,7 @@ a:hover {
 
 .specs-ticker span::before {
   content: '✦';
-  color: var(--cyan);
+  color: var(--amber);
   font-size: 10px;
 }
 
@@ -350,20 +391,21 @@ a:hover {
   left: 5%;
   right: 5%;
   bottom: 15%;
-  background: radial-gradient(ellipse at center, rgba(0, 229, 255, 0.18) 0%, rgba(99, 102, 241, 0.12) 40%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(245, 158, 11, 0.18) 0%, rgba(217, 119, 6, 0.1) 40%, transparent 70%);
   filter: blur(60px);
   pointer-events: none;
   z-index: 0;
+  transition: background 0.5s ease;
 }
 
 .oled-tv {
   position: relative;
   z-index: 1;
   background: #020305;
-  border: 2px solid #1c2433;
+  border: 2px solid #221c13;
   border-radius: 18px;
   padding: clamp(8px, 1.3vw, 16px);
-  box-shadow: 0 35px 100px -25px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  box-shadow: 0 35px 100px -25px rgba(0, 0, 0, 0.95), 0 0 0 1px rgba(245, 158, 11, 0.1);
 }
 
 .tv-display {
@@ -394,7 +436,7 @@ a:hover {
   width: 18%;
   height: 10px;
   margin: 0 auto;
-  background: linear-gradient(180deg, #1f2737 0%, #0b0f17 100%);
+  background: linear-gradient(180deg, #2b2214 0%, #0c0905 100%);
   border-radius: 0 0 10px 10px;
 }
 
@@ -435,10 +477,10 @@ a:hover {
 }
 
 .dock-btn.is-active {
-  background: linear-gradient(135deg, rgba(0, 229, 255, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%);
-  border-color: var(--cyan);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(217, 119, 6, 0.12) 100%);
+  border-color: var(--amber);
   color: #ffffff;
-  box-shadow: 0 0 20px var(--cyan-glow);
+  box-shadow: 0 0 20px var(--amber-glow);
 }
 
 .dock-btn .dock-icon {
@@ -483,7 +525,7 @@ section {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--cyan);
+  color: var(--amber);
   margin-bottom: 12px;
 }
 
@@ -536,14 +578,14 @@ h2.section-heading {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.08), transparent 70%);
+  background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.08), transparent 70%);
   pointer-events: none;
 }
 
 .bento-card:hover {
   transform: translateY(-3px);
   border-color: var(--border-glass-hover);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px -10px var(--cyan-glow);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7), 0 0 30px -10px var(--amber-glow);
 }
 
 .bento-card.col-span-2 {
@@ -560,8 +602,8 @@ h2.section-heading {
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: var(--cyan-subtle);
-  border: 1px solid rgba(0, 229, 255, 0.25);
+  background: var(--amber-subtle);
+  border: 1px solid var(--amber-border);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -623,8 +665,8 @@ h2.section-heading {
 }
 
 .eco-card.eco-active {
-  border-color: rgba(0, 229, 255, 0.4);
-  background: linear-gradient(180deg, rgba(0, 229, 255, 0.05) 0%, var(--bg-surface) 100%);
+  border-color: rgba(245, 158, 11, 0.4);
+  background: linear-gradient(180deg, rgba(245, 158, 11, 0.06) 0%, var(--bg-surface) 100%);
 }
 
 .eco-head {
@@ -648,9 +690,9 @@ h2.section-heading {
 }
 
 .eco-pill.pill-live {
-  background: rgba(0, 229, 255, 0.15);
-  color: var(--cyan);
-  border: 1px solid rgba(0, 229, 255, 0.35);
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--amber-bright);
+  border: 1px solid var(--amber-border);
 }
 
 .eco-pill.pill-soon {
@@ -684,7 +726,7 @@ h2.section-heading {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--cyan);
+  color: var(--amber-bright);
 }
 
 .eco-footer span.soon-label {
@@ -696,11 +738,11 @@ h2.section-heading {
    ========================================================================== */
 
 .download-hub {
-  background: linear-gradient(180deg, #0e131d 0%, #080a0f 100%);
-  border: 1px solid rgba(0, 229, 255, 0.25);
+  background: linear-gradient(180deg, #13100a 0%, #07090d 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
   border-radius: 24px;
   padding: clamp(32px, 5vw, 56px);
-  box-shadow: 0 30px 90px -20px rgba(0, 0, 0, 0.8), 0 0 40px -10px var(--cyan-glow);
+  box-shadow: 0 30px 90px -20px rgba(0, 0, 0, 0.8), 0 0 40px -10px var(--amber-glow);
   position: relative;
   overflow: hidden;
 }
@@ -712,7 +754,7 @@ h2.section-heading {
   right: 0;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -729,7 +771,7 @@ h2.section-heading {
   }
 }
 
-.hub-hero h3 {
+.hub-hero h3, .hub-hero h1 {
   font-size: 30px;
   font-weight: 850;
   color: var(--text-primary);
@@ -748,19 +790,19 @@ h2.section-heading {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background: linear-gradient(135deg, #00e5ff 0%, #0ea5e9 100%);
-  color: #020617;
+  background: var(--amber-gradient);
+  color: #040507;
   font-size: 18px;
   font-weight: 800;
   padding: 16px 36px;
   border-radius: var(--radius-pill);
-  box-shadow: 0 10px 30px var(--cyan-glow);
+  box-shadow: 0 10px 30px var(--amber-glow);
   transition: all 0.25s ease;
 }
 
 .btn-download-hero:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 40px rgba(0, 229, 255, 0.45);
+  box-shadow: 0 14px 40px rgba(245, 158, 11, 0.5);
   color: #000000;
 }
 
@@ -796,9 +838,9 @@ h2.section-heading {
   width: 28px;
   height: 28px;
   border-radius: 50%;
-  background: var(--cyan-subtle);
-  border: 1px solid var(--cyan);
-  color: var(--cyan);
+  background: var(--amber-subtle);
+  border: 1px solid var(--amber);
+  color: var(--amber);
   font-weight: 800;
   font-size: 13px;
   display: flex;
@@ -842,7 +884,7 @@ h2.section-heading {
   border-radius: 6px;
   font-family: var(--font-mono);
   font-size: 13px;
-  color: var(--cyan);
+  color: var(--amber);
   margin-top: 4px;
 }
 

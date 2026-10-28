@@ -7,13 +7,14 @@
   <meta name="description" content="XUBO Android beta sürümünü (APK) doğrudan televizyonunuza, tabletinize veya telefonunuza indirin; Downloader ve hızlı kurulum adımları.">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="assets/css/xubo.css">
+  <script src="assets/js/xubo.js" defer></script>
 </head>
 <body>
 
   <!-- Floating Capsule Navigation -->
   <div class="nav-wrapper">
     <header class="floating-nav">
-      <a href="./" class="nav-brand" aria-label="XUBO Ana Sayfa">
+      <a href="./" class="nav-brand" aria-label="XUBO">
         <img src="assets/img/xubo-icon.png" alt="XUBO Logo" width="34" height="34">
         <span>XUBO</span>
         <span class="pulse-indicator">
@@ -22,10 +23,18 @@
         </span>
       </a>
 
-      <nav class="nav-menu" aria-label="Ana Menü">
-        <a class="nav-opt" href="./#ekranlar">Arayüz</a>
-        <a class="nav-opt" href="./#ozellikler">Mimarisi</a>
-        <a class="btn-nav-cta" href="./">XUBO Tanıtım</a>
+      <nav class="nav-menu" aria-label="Menü">
+        <a class="nav-opt" href="./#ekranlar" data-i18n="nav_screens">Arayüz</a>
+        <a class="nav-opt" href="./#ozellikler" data-i18n="nav_architecture">Mimarisi</a>
+        
+        <!-- Language Switcher -->
+        <div class="lang-switcher" aria-label="Dil Seçimi">
+          <button type="button" class="lang-btn is-active" data-lang="tr" aria-pressed="true">TR</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <a class="btn-nav-cta" href="./" data-i18n="nav_home">XUBO Tanıtım</a>
       </nav>
     </header>
   </div>
@@ -33,8 +42,8 @@
   <div class="wrap" style="padding-top: 16px;">
     <main id="icerik">
       <div style="margin-bottom: 24px;">
-        <a href="./" style="font-size: 14px; font-weight: 600; color: var(--cyan); display: inline-flex; align-items: center; gap: 6px;">
-          ← XUBO Ana Sayfasına Dön
+        <a href="./" style="font-size: 14px; font-weight: 600; color: var(--amber-bright); display: inline-flex; align-items: center; gap: 6px;">
+          ← <span data-i18n="nav_home">XUBO Tanıtım Sayfasına Dön</span>
         </a>
       </div>
 
@@ -42,23 +51,23 @@
         <div class="hub-layout">
           <!-- Primary Download Card -->
           <div class="hub-hero">
-            <div class="hero-pill-badge" style="background: rgba(0, 229, 255, 0.1); border-color: rgba(0, 229, 255, 0.3); color: var(--cyan);">
+            <div class="hero-pill-badge" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); color: var(--amber-bright);" data-i18n="hub_badge">
               Açık Beta Dağıtımı
             </div>
-            <h1>XUBO Android APK İndir</h1>
-            <p>
+            <h1 data-i18n="hub_h3">XUBO Android APK İndir</h1>
+            <p data-i18n="hub_lead">
               Android TV, Google TV, Android tablet ve akıllı telefonlar için hazırlanmış bağımsız doğrudan kurulum dosyasıdır (APK).
             </p>
 
             <a class="btn-download-hero" href="downloads/XUBO_IPTV_1.1.2.apk" download="XUBO_IPTV_1.1.2.apk">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              APK Paketini İndir (v1.1.2)
+              <span data-i18n="hub_btn">APK Paketini İndir (v1.1.2)</span>
             </a>
 
             <div class="apk-specs">
-              <span>Paket Adı: XUBO_IPTV_1.1.2.apk</span>
-              <span>Boyut: ~15.3 MB</span>
-              <span>Android 6.0+ Desteği</span>
+              <span>Paket: XUBO_IPTV_1.1.2.apk</span>
+              <span data-i18n="hub_spec_size">Boyut: ~15.3 MB</span>
+              <span data-i18n="hub_spec_req">Android 6.0+ Desteği</span>
             </div>
 
             <!-- Cryptographic Verification -->
@@ -67,11 +76,11 @@
                 Kriptografik Doğrulama
               </h4>
               <div class="hash-row">
-                <span style="color: var(--text-dim); font-weight: 600;">Paket Adı:</span>
-                <code style="color: var(--cyan);">com.xubo.iptv.test</code>
+                <span style="color: var(--text-dim); font-weight: 600;" data-i18n="hub_pkg">Paket Adı:</span>
+                <code style="color: var(--amber-bright);">com.xubo.iptv.test</code>
               </div>
               <div class="hash-row" style="margin-top: 8px;">
-                <span style="color: var(--text-dim); font-weight: 600;">SHA-256 Özeti:</span>
+                <span style="color: var(--text-dim); font-weight: 600;" data-i18n="hub_hash">SHA-256 Özeti:</span>
                 <code>d50a4a7275c51cf0dea35c5600c0e1da33b8c53b19e2a3efd58d9cb8d258d469</code>
               </div>
             </div>
@@ -79,54 +88,53 @@
 
           <!-- Installation Timeline -->
           <div>
-            <h3 style="font-size: 22px; font-weight: 800; color: var(--text-primary); margin: 0 0 24px;">
+            <h3 style="font-size: 22px; font-weight: 800; color: var(--text-primary); margin: 0 0 24px;" data-i18n="hub_guide_title">
               Kurulum Kılavuzu
             </h3>
 
             <!-- Method A: Android TV -->
             <div style="margin-bottom: 32px;">
-              <h4 style="color: var(--cyan); margin-bottom: 12px; font-size: 16px;">
+              <h4 style="color: var(--amber-bright); margin-bottom: 12px; font-size: 16px;">
                 A. Android TV ve Google TV Cihazlarına Kurulum (Downloader ile)
               </h4>
               <ol class="timeline-guide">
                 <li>
-                  <h4>Downloader'ı Açın</h4>
-                  <p>Televizyonunuzda Google Play'den <b>Downloader</b> uygulamasını açın ve adres kısmına doğrudan şu URL'yi yazın: <br>
-                    <span class="fast-url">https://umurcelebi.github.io/xubo/indir.html</span>
-                  </p>
+                  <h4 data-i18n="hub_step_1_title">Downloader'ı Açın</h4>
+                  <p data-i18n="hub_step_1_desc">Televizyonunuzda Google Play'den Downloader uygulamasını açın ve adres kısmına doğrudan şu URL'yi yazın:</p>
+                  <span class="fast-url" style="margin-top:6px;">https://umurcelebi.github.io/xubo/indir.html</span>
                 </li>
                 <li>
-                  <h4>APK'yı İndirin</h4>
-                  <p>Kumandanızla sayfadaki <b>APK Paketini İndir</b> butonuna tıklayın. İndirme doğrudan başlar.</p>
+                  <h4 data-i18n="hub_step_2_title">APK'yı İndirin</h4>
+                  <p data-i18n="hub_step_2_desc">Kumandanızla sayfadaki APK Paketini İndir butonuna tıklayın. İndirme doğrudan başlar.</p>
                 </li>
                 <li>
-                  <h4>Yükleyin ve İzin Verin</h4>
-                  <p>İndirme tamamlandığında <b>Yükle (Install)</b> butonunu seçin. İlk defa yüklüyorsanız sistem ayarlarından Downloader uygulaması için <i>Bilinmeyen uygulamaları yükle</i> iznini açın.</p>
+                  <h4 data-i18n="hub_step_3_title">Yükleyin ve İzin Verin</h4>
+                  <p data-i18n="hub_step_3_desc">İndirme tamamlandığında Yükle (Install) butonunu seçin. İlk defa yüklüyorsanız sistem ayarlarından Downloader uygulaması için Bilinmeyen uygulamaları yükle iznini açın.</p>
                 </li>
               </ol>
             </div>
 
             <!-- Method B: Android Phone/Tablet -->
             <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 24px;">
-              <h4 style="color: var(--cyan); margin-bottom: 12px; font-size: 16px;">
+              <h4 style="color: var(--amber-bright); margin-bottom: 12px; font-size: 16px;">
                 B. Android Telefon ve Tablete Kurulum
               </h4>
               <ol class="timeline-guide">
                 <li>
                   <h4>İndirmeyi Başlatın</h4>
-                  <p>Sayfadaki <b>APK Paketini İndir</b> butonuna dokunun. Tarayıcınız "Dosya zararlı olabilir" uyarısı verirse <b>Yine de indir</b> seçeneğini onaylayın.</p>
+                  <p>Sayfadaki APK Paketini İndir butonuna dokunun. Tarayıcınız uyarı verirse onaylayın.</p>
                 </li>
                 <li>
                   <h4>Dosyayı Açın ve Kurun</h4>
-                  <p>İndirme bittiğinde bildirime veya <i>İndirilenler</i> klasöründeki dosyaya dokunarak <b>Yükle</b> deyin.</p>
+                  <p>İndirme bittiğinde bildirime veya İndirilenler klasöründeki dosyaya dokunarak Yükle deyin.</p>
                 </li>
               </ol>
             </div>
           </div>
         </div>
 
-        <div class="legal-box" style="margin-top: 40px;">
-          <strong>Yasal Hatırlatma:</strong> XUBO yalnızca oynatıcı arayüzüdür. Uygulama içinde hazır kanal, yayın veya içerik bulunmaz ve satılmaz. İzlemek için IPTV servis sağlayıcınızın size sunduğu yasal hesap bilgilerini (Xtream veya M3U) girmeniz gerekir.
+        <div class="legal-box" style="margin-top: 40px;" data-i18n="legal_text">
+          Önemli Yasal Bilgilendirme: XUBO yalnızca bağımsız bir medya oynatıcı arayüzüdür. Uygulama içerisinde hazır yayın, kanal, film veya dizi bulunmaz ve satılmaz. Hizmetten yararlanmak için kendi yasal IPTV aboneliğinizi kullanmanız gerekir.
         </div>
       </div>
     </main>
@@ -134,13 +142,13 @@
     <!-- Footer -->
     <footer class="global-footer">
       <div class="footer-inner">
-        <div>
+        <div data-i18n="footer_copy">
           © 2026 Umur Çelebi. XUBO IPTV Player — Tüm hakları saklıdır.
         </div>
         <div class="footer-links">
-          <a href="./">XUBO Tanıtım</a>
+          <a href="./" data-i18n="nav_home">XUBO Tanıtım</a>
           <a href="../">umurcelebi.github.io</a>
-          <a href="privacy.html">Gizlilik Politikası</a>
+          <a href="privacy.html" data-i18n="footer_privacy">Gizlilik Politikası</a>
         </div>
       </div>
     </footer>
