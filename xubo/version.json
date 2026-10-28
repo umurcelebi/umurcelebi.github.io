@@ -1,26 +1,28 @@
 {
-  "versionName": "1.1.8",
-  "versionCode": 132,
+  "versionName": "1.1.9",
+  "versionCode": 133,
   "minRequiredVersion": 100,
   "releaseDate": "2026-10-28",
-  "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/XUBO_IPTV_1.1.8.apk",
-  "apkFileName": "XUBO_IPTV_1.1.8.apk",
-  "fileSize": 16020451,
-  "sha256": "6e4fd2414ebdc2cd169fb6527973747423bb70a5116e91d37a735845ae2648d7",
+  "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/xubo-iptv.apk",
+  "apkFileName": "xubo-iptv.apk",
+  "fileSize": 16024547,
+  "sha256": "154fd49c831a6164bee4753e0868bb0048562b528153f69ed04864fa76bf71a9",
   "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
-      "Uygulama içi doğrudan güncelleme indirici ve yükleyici entegre edildi (Android TV ve Mi Stick için tarayıcısız doğrudan APK kurulumu ve canlı yüzde göstergesi)",
-      "Açılışta otomatik yeni sürüm denetimi ve güncelleme onay penceresi",
-      "Cep telefonlarında dikey modda giriş ekranı dokunmatik buton algılama ve klavye Enter/Git geçişleri optimize edildi",
-      "Ayarlar menüsüne resmi web sitesi bağlantısı"
+      "Film ve dizi bölümlerine 'İzlendi' olarak işaretleme özelliği eklendi (işaretlenenler 'Devam Edenler' listesinden otomatik kaldırılır)",
+      "Mobil dikey modda film detay kartında afiş altındaki boşluk açıklamalar ve oyuncu/yönetmen bilgileriyle tam genişlikte dolduruldu",
+      "Dizi ve film oynatırken seekbar ve oynatıcı alt panelindeki gölge kaldırıldı",
+      "Güncellemeleri Denetle butonu ve pencereleri tüm dillerde dinamik çeviriye bağlandı",
+      "APK dosya adı sabit 'xubo-iptv.apk' olarak güncellendi"
     ],
     "en": [
-      "Integrated native in-app self-updater with live progress percentage (browser-free updates for Android TV and Mi Stick)",
-      "Automatic update check on startup with user confirmation dialog",
-      "Optimized mobile portrait login touch responsiveness and keyboard Enter/Done actions",
-      "Official website link in Settings"
+      "Added 'Mark as Watched' feature for movies and series episodes (watched items disappear from 'Continue Watching')",
+      "Optimized movie detail modal on mobile portrait to fill empty space below the poster with full-width plot and credits",
+      "Eliminated lingering seekbar and bottom player shadows during movie and series playback",
+      "Full multi-language dynamic translation for the 'Check for Updates' button and dialogs across all 25 languages",
+      "Standardized APK download package name as 'xubo-iptv.apk'"
     ]
   }
 }
