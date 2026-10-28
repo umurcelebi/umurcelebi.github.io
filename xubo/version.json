@@ -1,24 +1,26 @@
 {
-  "versionName": "1.1.2",
-  "versionCode": 125,
+  "versionName": "1.1.4",
+  "versionCode": 127,
   "minRequiredVersion": 100,
   "releaseDate": "2026-10-28",
-  "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/XUBO_IPTV_1.1.2.apk",
-  "apkFileName": "XUBO_IPTV_1.1.2.apk",
-  "fileSize": 15995857,
-  "sha256": "d50a4a7275c51cf0dea35c5600c0e1da33b8c53b19e2a3efd58d9cb8d258d469",
-  "packageName": "com.xubo.iptv.test",
+  "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/XUBO_IPTV_1.1.4.apk",
+  "apkFileName": "XUBO_IPTV_1.1.4.apk",
+  "fileSize": 16016355,
+  "sha256": "78de61ea1970ccf6b4744c9c00d284e2764d46cbaaba9fceae04680192989081",
+  "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
-      "Canlı TV ve EPG program akışında performans iyileştirmeleri",
-      "VOD ve dizi oynatıcı motorunda kararlılık güncellemeleri",
-      "Çoklu profil ve Xtream/M3U bağlantı optimizasyonları"
+      "Giriş ekranında dokunmatik kutu geçişleri ve klavye etkileşimi optimize edildi",
+      "Google Cloud & Google Drive istemci taraflı yedekleme ve geri yükleme entegrasyonu",
+      "Ayarlar menüsüne uygulama içi canlı 'Güncellemeleri Denetle' özelliği eklendi",
+      "Canlı TV ve VOD oynatıcı motorunda kararlılık iyileştirmeleri"
     ],
     "en": [
-      "Performance improvements in Live TV and EPG guide streaming",
-      "Stability updates in VOD cinema and series playback engine",
-      "Multi-profile and Xtream/M3U connection optimizations"
+      "Optimized login screen touch response and seamless input switching",
+      "Google Cloud & Google Drive client-side backup and restore integration",
+      "Added in-app live 'Check for Updates' feature in Settings menu",
+      "Stability and playback performance improvements in Live TV and VOD"
     ]
   }
 }
