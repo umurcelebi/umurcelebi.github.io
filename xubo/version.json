@@ -1,26 +1,26 @@
 {
-  "versionName": "1.1.4",
-  "versionCode": 127,
+  "versionName": "1.1.5",
+  "versionCode": 128,
   "minRequiredVersion": 100,
   "releaseDate": "2026-10-28",
-  "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/XUBO_IPTV_1.1.4.apk",
-  "apkFileName": "XUBO_IPTV_1.1.4.apk",
+  "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/XUBO_IPTV_1.1.5.apk",
+  "apkFileName": "XUBO_IPTV_1.1.5.apk",
   "fileSize": 16016355,
-  "sha256": "78de61ea1970ccf6b4744c9c00d284e2764d46cbaaba9fceae04680192989081",
+  "sha256": "1954e7054dbf338c279b8c54b7d8f043c31eb37be59be745448c591e4b36d90d",
   "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
+      "Telefon ve dokunmatik ekranlarda tam ekran oynatıcı kontrolleri kompakt hale getirildi",
+      "Ekrana çift dokunma ile oynat/duraklat ve geri/ileri sarma stabilitesi ve durum senkronizasyonu düzeltildi",
       "Giriş ekranında dokunmatik kutu geçişleri ve klavye etkileşimi optimize edildi",
-      "Google Cloud & Google Drive istemci taraflı yedekleme ve geri yükleme entegrasyonu",
-      "Ayarlar menüsüne uygulama içi canlı 'Güncellemeleri Denetle' özelliği eklendi",
-      "Canlı TV ve VOD oynatıcı motorunda kararlılık iyileştirmeleri"
+      "Google Cloud & Google Drive istemci taraflı yedekleme ve canlı güncelleme kontrolü"
     ],
     "en": [
+      "Compact and unobtrusive fullscreen player controls for phones and touchscreens",
+      "Fixed double-tap play/pause and seek stability and status synchronization",
       "Optimized login screen touch response and seamless input switching",
-      "Google Cloud & Google Drive client-side backup and restore integration",
-      "Added in-app live 'Check for Updates' feature in Settings menu",
-      "Stability and playback performance improvements in Live TV and VOD"
+      "Google Cloud & Google Drive client-side backup and live in-app update checker"
     ]
   }
 }
