@@ -1,131 +1,301 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Umur Çelebi</title>
+  <meta name="description" content="Umur Çelebi — Yazılım geliştirici. XUBO IPTV Player ve projeler.">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <style>
+    :root {
+      --bg: #090a0d;
+      --card: #12151c;
+      --card-hover: #171b24;
+      --border: #232834;
+      --border-hover: #373f52;
+      --accent: #f5a623;
+      --accent-hover: #ffb84d;
+      --accent-glow: rgba(245, 166, 35, 0.16);
+      --text: #f3f5f8;
+      --text-muted: #9ba4b5;
+      --text-dim: #656f82;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+      color-scheme: dark;
+    }
 
-  <meta
-    name="description"
-    content="XUBO is a premium IPTV media player for Xbox Series X/S and Samsung Tizen OS."
-  />
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-  <meta name="robots" content="index, follow" />
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  <title>XUBO — IPTV Player</title>
+    .container {
+      width: 100%;
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    header {
+      margin-bottom: 56px;
+    }
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@300;400&display=swap"
-    rel="stylesheet"
-  />
+    .avatar-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #1e2430 0%, #12151c 100%);
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    }
 
-  <link rel="stylesheet" href="styles.css" />
+    h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 0 0 12px;
+      line-height: 1.1;
+    }
+
+    .lead {
+      font-size: 19px;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 20px;
+    }
+
+    /* Featured Project Card */
+    .featured-card {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s ease;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .featured-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 20px;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(245, 166, 35, 0.3), transparent 70%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .featured-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-hover);
+      box-shadow: 0 20px 48px -12px var(--accent-glow), 0 12px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .card-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .card-brand img {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+    }
+
+    .card-brand-text h2 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .card-brand-text span {
+      font-size: 13px;
+      color: var(--text-dim);
+      font-weight: 500;
+    }
+
+    .card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34, 197, 94, 0.14);
+      color: #22c55e;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .card-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin: 0 0 24px;
+    }
+
+    .card-footer {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      padding-top: 20px;
+    }
+
+    @media (min-width: 600px) {
+      .card-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .plat-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .plat-tags span {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .featured-card:hover .card-cta {
+      color: var(--accent-hover);
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: var(--accent);
+    }
+  </style>
 </head>
-
 <body>
 
-  <!-- Subtle Analog Film Grain Overlay -->
-  <div class="film-grain" aria-hidden="true"></div>
+  <main class="container">
+    <header>
+      <div class="avatar-wrap">UÇ</div>
+      <h1>Umur Çelebi</h1>
+      <p class="lead">Yazılım geliştirme, IPTV teknolojileri ve modern televizyon arayüzleri.</p>
+    </header>
 
-  <!-- Ambient Studio Spotlight -->
-  <div
-    class="cursor-spotlight"
-    id="cursorSpotlight"
-    aria-hidden="true"
-  ></div>
+    <section>
+      <p class="section-title">Öne Çıkan Proje</p>
 
-  <!-- Main Hero -->
-  <main class="monolith-stage">
+      <a href="xubo/" class="featured-card">
+        <div class="card-top">
+          <div class="card-brand">
+            <img src="xubo/assets/img/xubo-icon.png" alt="XUBO" width="48" height="48">
+            <div class="card-brand-text">
+              <h2>XUBO</h2>
+              <span>Premium IPTV Player</span>
+            </div>
+          </div>
+          <span class="card-badge">Beta Yayında</span>
+        </div>
 
-    <div
-      class="hero-backdrop-glow"
-      aria-hidden="true"
-    ></div>
-
-    <section
-      class="brand-monument"
-      aria-labelledby="xubo-heading"
-    >
-
-      <!-- Logo -->
-      <div class="logo-frame">
-        <img
-          src="xubo-logo.png"
-          alt="XUBO"
-          class="xubo-hero-logo"
-          draggable="false"
-        />
-      </div>
-
-      <!-- Product Label -->
-      <div class="hero-kicker">
-
-        <span
-          class="kicker-line"
-          aria-hidden="true"
-        ></span>
-
-        <span class="mono-tag">
-          Premium IPTV Player
-        </span>
-
-        <span
-          class="kicker-line"
-          aria-hidden="true"
-        ></span>
-
-      </div>
-
-      <!-- Headline -->
-      <h1
-        class="hero-headline"
-        id="xubo-heading"
-      >
-        Entertainment in its purest,<br />
-        <span class="headline-accent">
-          most seamless form.
-        </span>
-      </h1>
-
-      <!-- Supporting Copy -->
-      <p class="hero-lead">
-        Premium IPTV features — completely free.
-      </p>
-
-      <!-- Platform Availability -->
-      <div class="release-statement">
-
-        <span
-          class="pulse-dot"
-          aria-hidden="true"
-        ></span>
-
-        <p class="release-text">
-          Coming soon to
-          <strong>Xbox Series X/S</strong>
-          and
-          <strong>Samsung Tizen OS</strong>
+        <p class="card-desc">
+          Televizyon ve mobil cihazlar için tasarlanmış, kumandayla kontrol edilen yüksek performanslı IPTV medya oynatıcısı. Canlı TV, program rehberi (EPG), film ve dizi kütüphanesi.
         </p>
 
-      </div>
-
+        <div class="card-footer">
+          <div class="plat-tags">
+            <span>Android (TV / Mobil)</span>
+            <span>webOS</span>
+            <span>Tizen</span>
+            <span>Xbox</span>
+          </div>
+          <span class="card-cta">
+            XUBO'yu Keşfet ve İndir →
+          </span>
+        </div>
+      </a>
     </section>
-
   </main>
 
-  <!-- Privacy Policy -->
-  <footer class="site-footer">
-    <a
-      href="privacy.html"
-      class="privacy-link"
-    >
-      Privacy Policy
-    </a>
+  <footer>
+    <div class="container" style="padding: 0;">
+      <span>© 2026 Umur Çelebi</span>
+      <div style="margin-top: 8px;">
+        <a href="https://github.com/umurcelebi" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:umurcelebi@gmail.com">E-posta</a>
+        <a href="xubo/">XUBO Sayfası</a>
+        <a href="xubo/privacy.html">Gizlilik Politikası</a>
+      </div>
+    </div>
   </footer>
-
-  <script src="app.js"></script>
 
 </body>
 </html>
