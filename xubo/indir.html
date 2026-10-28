@@ -4,181 +4,141 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>İndir — XUBO IPTV Player</title>
-  <meta name="description" content="XUBO Android beta sürümünü (APK) televizyonunuza, tabletinize veya telefonunuza indirin; kolay kurulum rehberi.">
+  <meta name="description" content="XUBO Android beta sürümünü (APK) doğrudan televizyonunuza, tabletinize veya telefonunuza indirin; Downloader ve hızlı kurulum adımları.">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="assets/css/xubo.css">
-  <style>
-    .download-page-hero {
-      padding: 44px 0 20px;
-    }
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 16px;
-    }
-    .back-link:hover {
-      color: var(--accent);
-    }
-    .tab-guides {
-      display: flex;
-      gap: 12px;
-      margin-bottom: 24px;
-      border-bottom: 1px solid var(--border-subtle);
-      padding-bottom: 12px;
-    }
-    .tab-guide-btn {
-      background: none;
-      border: none;
-      color: var(--text-muted);
-      font-size: 16px;
-      font-weight: 700;
-      padding: 8px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .tab-guide-btn.is-active {
-      background: var(--bg-card);
-      color: var(--accent);
-    }
-  </style>
 </head>
 <body>
 
-  <div class="wrap">
-    <!-- Header -->
-    <header class="top">
-      <a class="brand" href="./" aria-label="XUBO Ana Sayfa">
-        <img src="assets/img/xubo-icon.png" alt="XUBO Simge" width="38" height="38">
-        <span>XUBO <span class="beta-pill">BETA</span></span>
+  <!-- Floating Capsule Navigation -->
+  <div class="nav-wrapper">
+    <header class="floating-nav">
+      <a href="./" class="nav-brand" aria-label="XUBO Ana Sayfa">
+        <img src="assets/img/xubo-icon.png" alt="XUBO Logo" width="34" height="34">
+        <span>XUBO</span>
+        <span class="pulse-indicator">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          v1.1.2 BETA
+        </span>
       </a>
-      <nav aria-label="Site Gezintisi">
-        <a class="opt" href="./#ozellikler">Özellikler</a>
-        <a class="opt" href="./#cihazlar">Nerede Çalışır</a>
-        <a class="opt" href="privacy.html">Gizlilik</a>
-        <a class="cta-nav" href="./">XUBO Ana Sayfa</a>
+
+      <nav class="nav-menu" aria-label="Ana Menü">
+        <a class="nav-opt" href="./#ekranlar">Arayüz</a>
+        <a class="nav-opt" href="./#ozellikler">Mimarisi</a>
+        <a class="btn-nav-cta" href="./">XUBO Tanıtım</a>
       </nav>
     </header>
+  </div>
 
+  <div class="wrap" style="padding-top: 16px;">
     <main id="icerik">
-      <div class="download-page-hero">
-        <a href="./" class="back-link">
-          ← XUBO Tanıtım Sayfasına Dön
+      <div style="margin-bottom: 24px;">
+        <a href="./" style="font-size: 14px; font-weight: 600; color: var(--cyan); display: inline-flex; align-items: center; gap: 6px;">
+          ← XUBO Ana Sayfasına Dön
         </a>
-        <div class="hero__kicker">Açık Beta Dağıtımı</div>
-        <h1 style="font-size: clamp(34px, 5vw, 56px); margin-bottom: 12px;">Android Sürümünü İndir</h1>
-        <p class="lede" style="color: var(--text-muted); max-width: 65ch;">
-          XUBO Android 1.1.2 beta sürümü; Android TV, Google TV, Android tablet ve akıllı telefonlar için hazırlanmıştır.
-        </p>
       </div>
 
-      <div class="download-box" style="margin-top: 12px;">
-        <div class="dl-grid">
-          <!-- Primary APK Download Card -->
-          <div>
-            <div class="dl-card-primary">
-              <span class="status-badge badge-active" style="margin-bottom: 14px;">Beta Sürüm</span>
-              <h3>XUBO Android APK</h3>
-              <p>Doğrudan cihazınıza kurabileceğiniz bağımsız APK paketidir.</p>
-              
-              <a class="btn-primary" href="downloads/XUBO_IPTV_1.1.2.apk" download="XUBO_IPTV_1.1.2.apk" style="font-size: 18px; padding: 15px 30px;">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                APK'yı İndir (v1.1.2)
-              </a>
+      <div class="download-hub">
+        <div class="hub-layout">
+          <!-- Primary Download Card -->
+          <div class="hub-hero">
+            <div class="hero-pill-badge" style="background: rgba(0, 229, 255, 0.1); border-color: rgba(0, 229, 255, 0.3); color: var(--cyan);">
+              Açık Beta Dağıtımı
+            </div>
+            <h1>XUBO Android APK İndir</h1>
+            <p>
+              Android TV, Google TV, Android tablet ve akıllı telefonlar için hazırlanmış bağımsız doğrudan kurulum dosyasıdır (APK).
+            </p>
 
-              <div class="dl-meta">
-                <span>Dosya Adı: XUBO_IPTV_1.1.2.apk</span>
-                <span>Boyut: ~15.3 MB</span>
-                <span>Tarih: 28 Ekim 2026</span>
-              </div>
+            <a class="btn-download-hero" href="downloads/XUBO_IPTV_1.1.2.apk" download="XUBO_IPTV_1.1.2.apk">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              APK Paketini İndir (v1.1.2)
+            </a>
+
+            <div class="apk-specs">
+              <span>Paket Adı: XUBO_IPTV_1.1.2.apk</span>
+              <span>Boyut: ~15.3 MB</span>
+              <span>Android 6.0+ Desteği</span>
             </div>
 
-            <!-- Verification Table -->
-            <table class="verify-table" style="margin-top: 28px;">
-              <thead>
-                <tr>
-                  <th colspan="2" style="font-size: 15px; color: var(--text-main); padding-bottom: 14px;">
-                    Dosya Doğrulama Bilgileri
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th>Sürüm</th>
-                  <td>1.1.2 (Beta)</td>
-                </tr>
-                <tr>
-                  <th>Paket Adı</th>
-                  <td><code>com.xubo.iptv.test</code></td>
-                </tr>
-                <tr>
-                  <th>Minimum Android</th>
-                  <td>Android 6.0 (Marshmallow) ve üzeri</td>
-                </tr>
-                <tr>
-                  <th>SHA-256</th>
-                  <td><code>d50a4a7275c51cf0dea35c5600c0e1da33b8c53b19e2a3efd58d9cb8d258d469</code></td>
-                </tr>
-              </tbody>
-            </table>
+            <!-- Cryptographic Verification -->
+            <div class="security-card" style="margin-top: 32px;">
+              <h4 style="margin: 0 0 12px; font-size: 14px; color: var(--text-primary); font-weight: 700;">
+                Kriptografik Doğrulama
+              </h4>
+              <div class="hash-row">
+                <span style="color: var(--text-dim); font-weight: 600;">Paket Adı:</span>
+                <code style="color: var(--cyan);">com.xubo.iptv.test</code>
+              </div>
+              <div class="hash-row" style="margin-top: 8px;">
+                <span style="color: var(--text-dim); font-weight: 600;">SHA-256 Özeti:</span>
+                <code>d50a4a7275c51cf0dea35c5600c0e1da33b8c53b19e2a3efd58d9cb8d258d469</code>
+              </div>
+            </div>
           </div>
 
-          <!-- Installation Instructions -->
+          <!-- Installation Timeline -->
           <div>
-            <h3 class="guide-title">Adım Adım Kurulum Kılavuzu</h3>
+            <h3 style="font-size: 22px; font-weight: 800; color: var(--text-primary); margin: 0 0 24px;">
+              Kurulum Kılavuzu
+            </h3>
 
-            <div style="margin-bottom: 24px;">
-              <h4 style="color: var(--accent); margin-bottom: 8px; font-size: 17px;">A. Android TV ve Google TV (Kumanda ile)</h4>
-              <ol class="steps-list">
+            <!-- Method A: Android TV -->
+            <div style="margin-bottom: 32px;">
+              <h4 style="color: var(--cyan); margin-bottom: 12px; font-size: 16px;">
+                A. Android TV ve Google TV Cihazlarına Kurulum (Downloader ile)
+              </h4>
+              <ol class="timeline-guide">
                 <li>
-                  <h4>Downloader ile Açın</h4>
+                  <h4>Downloader'ı Açın</h4>
                   <p>Televizyonunuzda Google Play'den <b>Downloader</b> uygulamasını açın ve adres kısmına doğrudan şu URL'yi yazın: <br>
-                    <span class="code-pill">https://umurcelebi.github.io/xubo/indir.html</span>
+                    <span class="fast-url">https://umurcelebi.github.io/xubo/indir.html</span>
                   </p>
                 </li>
                 <li>
                   <h4>APK'yı İndirin</h4>
-                  <p>Sayfadaki <b>APK'yı İndir</b> butonunu kumandanızla seçin. İndirme hemen başlar.</p>
+                  <p>Kumandanızla sayfadaki <b>APK Paketini İndir</b> butonuna tıklayın. İndirme doğrudan başlar.</p>
                 </li>
                 <li>
                   <h4>Yükleyin ve İzin Verin</h4>
-                  <p>İndirme bittiğinde <b>Install (Yükle)</b> seçeneğine tıklayın. Cihazınız ilk kez harici yükleme yapıyorsa Ayarlar ekranından Downloader için <i>Bilinmeyen uygulamaları yükle</i> iznini verin.</p>
+                  <p>İndirme tamamlandığında <b>Yükle (Install)</b> butonunu seçin. İlk defa yüklüyorsanız sistem ayarlarından Downloader uygulaması için <i>Bilinmeyen uygulamaları yükle</i> iznini açın.</p>
                 </li>
               </ol>
             </div>
 
-            <div style="border-top: 1px solid var(--border-subtle); padding-top: 20px;">
-              <h4 style="color: var(--accent); margin-bottom: 8px; font-size: 17px;">B. Android Telefon ve Tablet</h4>
-              <ol class="steps-list">
+            <!-- Method B: Android Phone/Tablet -->
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 24px;">
+              <h4 style="color: var(--cyan); margin-bottom: 12px; font-size: 16px;">
+                B. Android Telefon ve Tablete Kurulum
+              </h4>
+              <ol class="timeline-guide">
                 <li>
-                  <h4>İndirmeyi Onaylayın</h4>
-                  <p>Yukarıdaki <b>APK'yı İndir</b> butonuna dokunun. Tarayıcınız "Dosya zararlı olabilir" uyarısı verirse <b>Yine de indir</b>'e dokunun.</p>
+                  <h4>İndirmeyi Başlatın</h4>
+                  <p>Sayfadaki <b>APK Paketini İndir</b> butonuna dokunun. Tarayıcınız "Dosya zararlı olabilir" uyarısı verirse <b>Yine de indir</b> seçeneğini onaylayın.</p>
                 </li>
                 <li>
-                  <h4>Dosyayı Açın ve Yükleyin</h4>
-                  <p>İndirme bildirimine veya İndirilenler klasöründeki dosyaya dokunun, <b>Yükle</b> diyerek kurulumu tamamlayın.</p>
+                  <h4>Dosyayı Açın ve Kurun</h4>
+                  <p>İndirme bittiğinde bildirime veya <i>İndirilenler</i> klasöründeki dosyaya dokunarak <b>Yükle</b> deyin.</p>
                 </li>
               </ol>
             </div>
           </div>
         </div>
 
-        <div class="disclaimer-card" style="margin-top: 36px;">
-          <p><b>Hatırlatma:</b> XUBO hazır yayın veya kanal listesi içermez. Çalıştırmak için IPTV sağlayıcınızın size temin ettiği hesap bilgilerinizi (Xtream veya M3U) girmeniz gerekir.</p>
+        <div class="legal-box" style="margin-top: 40px;">
+          <strong>Yasal Hatırlatma:</strong> XUBO yalnızca oynatıcı arayüzüdür. Uygulama içinde hazır kanal, yayın veya içerik bulunmaz ve satılmaz. İzlemek için IPTV servis sağlayıcınızın size sunduğu yasal hesap bilgilerini (Xtream veya M3U) girmeniz gerekir.
         </div>
       </div>
     </main>
 
     <!-- Footer -->
-    <footer class="site-foot">
-      <div class="foot-content">
+    <footer class="global-footer">
+      <div class="footer-inner">
         <div>
-          © 2026 Umur Çelebi. Tüm hakları saklıdır.
+          © 2026 Umur Çelebi. XUBO IPTV Player — Tüm hakları saklıdır.
         </div>
-        <div class="foot-links">
-          <a href="./">XUBO Ana Sayfa</a>
+        <div class="footer-links">
+          <a href="./">XUBO Tanıtım</a>
           <a href="../">umurcelebi.github.io</a>
           <a href="privacy.html">Gizlilik Politikası</a>
         </div>

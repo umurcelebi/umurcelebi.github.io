@@ -1,77 +1,89 @@
 /* ==========================================================================
-   XUBO Interactive Script
-   TV Look Switcher & Navigation Helpers
+   XUBO Interactive Engine
+   OLED Showcase Controller & Utility Functions
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const tabs = document.querySelectorAll('.tv-tab-btn');
-  const screens = document.querySelectorAll('.tv-screen img');
-  const titleEl = document.querySelector('[data-look-title]');
-  const descEl = document.querySelector('[data-look-desc]');
+  const dockButtons = document.querySelectorAll('.dock-btn');
+  const tvScreens = document.querySelectorAll('.tv-display img');
+  const captionTitle = document.querySelector('[data-dock-title]');
+  const captionDesc = document.querySelector('[data-dock-desc]');
+  const ambientGlow = document.querySelector('.ambient-glow');
 
-  const lookData = {
+  const screenMetadata = {
     'live': {
-      title: 'Canlı TV ve Program Rehberi (EPG)',
-      desc: 'Kategoriler, anlık yayın akışı ve kumanda tuşlarıyla tek dokunuşta kesintisiz kanal geçişi.'
+      title: 'Canlı TV ve Elektronik Program Rehberi (EPG)',
+      desc: 'Anlık ve sıradaki yayın bilgisi, kategori bazlı filtreleme ve kumandadan doğrudan sayı ile kanal seçimi.',
+      glow: 'radial-gradient(ellipse at center, rgba(0, 229, 255, 0.22) 0%, rgba(56, 189, 248, 0.12) 40%, transparent 70%)'
     },
     'vod': {
-      title: 'Film ve Diziler (VOD)',
-      desc: 'Görsel afiş duvarı, kategori rafları, kaldığınız yerden devam etme ve detay bilgileri.'
+      title: '4K VOD Sinema & Film Kütüphanesi',
+      desc: 'IMDb puanları, oyuncu kadrosu, film özetleri ve kaldığınız saniyeyi otomatik hatırlayan akıllı oynatıcı hafızası.',
+      glow: 'radial-gradient(ellipse at center, rgba(99, 102, 241, 0.24) 0%, rgba(168, 85, 247, 0.14) 40%, transparent 70%)'
+    },
+    'series': {
+      title: 'Dizi & Sezon Takip Arayüzü',
+      desc: 'Sezon rafları, bölüm listeleri, sonraki bölüme otomatik geçiş ve izleme yüzdesi takibi.',
+      glow: 'radial-gradient(ellipse at center, rgba(236, 72, 153, 0.2) 0%, rgba(99, 102, 241, 0.14) 40%, transparent 70%)'
     },
     'login': {
-      title: 'Giriş ve Çoklu Profil',
-      desc: 'Xtream ve M3U hesaplarınızı kolayca ekleyin; evdeki herkes için ayrı profil yönetimi.'
+      title: 'Çoklu Kaynak & Hesap Yönetimi',
+      desc: 'Xtream Codes API, M3U / M3U8 ve MAC Portal destekli; evdeki herkes için bağımsız profil ayrımı.',
+      glow: 'radial-gradient(ellipse at center, rgba(34, 197, 94, 0.18) 0%, rgba(0, 229, 255, 0.12) 40%, transparent 70%)'
     },
     'settings': {
-      title: 'Ayarlar ve Ebeveyn Kilidi',
-      desc: 'Görünüm ayarları, ses/altyazı tercihleri ve PIN korumalı yetişkin kategori kilidi.'
+      title: 'Sistem Tercihleri ve PIN Ebeveyn Kilidi',
+      desc: 'HLS/TS akış formatı, ses ve altyazı motoru, uyku zamanlayıcısı ve 4 haneli PIN ile kategori gizleme.',
+      glow: 'radial-gradient(ellipse at center, rgba(245, 158, 11, 0.2) 0%, rgba(99, 102, 241, 0.12) 40%, transparent 70%)'
     }
   };
 
-  function switchTab(targetKey) {
-    // Update tab buttons
-    tabs.forEach(tab => {
-      const isMatch = tab.getAttribute('data-target') === targetKey;
-      tab.classList.toggle('is-active', isMatch);
-      tab.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+  function activateScreen(key) {
+    // 1. Update Buttons
+    dockButtons.forEach(btn => {
+      const match = btn.getAttribute('data-target') === key;
+      btn.classList.toggle('is-active', match);
+      btn.setAttribute('aria-selected', match ? 'true' : 'false');
     });
 
-    // Update screen images
-    screens.forEach(img => {
-      const isMatch = img.getAttribute('data-screen') === targetKey;
-      img.classList.toggle('is-active', isMatch);
+    // 2. Update TV Screen Images
+    tvScreens.forEach(img => {
+      const match = img.getAttribute('data-screen') === key;
+      img.classList.toggle('is-visible', match);
     });
 
-    // Update captions
-    if (lookData[targetKey] && titleEl && descEl) {
-      titleEl.textContent = lookData[targetKey].title;
-      descEl.textContent = lookData[targetKey].desc;
+    // 3. Update Captions & Glow
+    const meta = screenMetadata[key];
+    if (meta) {
+      if (captionTitle) captionTitle.textContent = meta.title;
+      if (captionDesc) captionDesc.textContent = meta.desc;
+      if (ambientGlow) ambientGlow.style.background = meta.glow;
     }
   }
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = tab.getAttribute('data-target');
-      if (target) switchTab(target);
+  dockButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.getAttribute('data-target');
+      if (target) activateScreen(target);
     });
+  });
 
-    // Keyboard navigation (Left / Right arrow keys)
-    tab.addEventListener('keydown', (e) => {
-      const tabArr = Array.from(tabs);
-      const currentIndex = tabArr.indexOf(tab);
-      let nextIndex = null;
-
-      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-        nextIndex = (currentIndex + 1) % tabArr.length;
-      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-        nextIndex = (currentIndex - 1 + tabArr.length) % tabArr.length;
-      }
-
-      if (nextIndex !== null) {
-        e.preventDefault();
-        tabArr[nextIndex].focus();
-        const target = tabArr[nextIndex].getAttribute('data-target');
-        if (target) switchTab(target);
+  // Copy to clipboard helper
+  const copyButtons = document.querySelectorAll('[data-copy]');
+  copyButtons.forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const textToCopy = btn.getAttribute('data-copy');
+      if (textToCopy) {
+        try {
+          await navigator.clipboard.writeText(textToCopy);
+          const originalText = btn.textContent;
+          btn.textContent = 'Kopyalandı ✓';
+          setTimeout(() => {
+            btn.textContent = originalText;
+          }, 2000);
+        } catch (e) {
+          console.error('Kopyalama hatası:', e);
+        }
       }
     });
   });

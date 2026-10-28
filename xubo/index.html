@@ -3,263 +3,320 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>XUBO — Televizyonunuz İçin Premium IPTV Oynatıcı</title>
-  <meta name="description" content="XUBO; kendi IPTV aboneliğinizdeki canlı yayın, film ve dizileri televizyonda kumandayla en akıcı şekilde izlemeniz için tasarlanmış bir oynatıcıdır.">
+  <title>XUBO — Televizyonunuz İçin Yeni Nesil IPTV Oynatıcı</title>
+  <meta name="description" content="XUBO; kendi IPTV aboneliğinizdeki canlı TV, film ve dizileri televizyonunuzda en yüksek performans ve sinematik karanlık arayüzle oynatan bağımsız medya oynatıcısıdır.">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="assets/css/xubo.css">
   <script src="assets/js/xubo.js" defer></script>
 </head>
 <body>
 
-  <div class="wrap">
-    <!-- Header -->
-    <header class="top">
-      <a class="brand" href="./" aria-label="XUBO Ana Sayfa">
-        <img src="assets/img/xubo-icon.png" alt="XUBO Simge" width="38" height="38">
-        <span>XUBO <span class="beta-pill">BETA</span></span>
+  <!-- Floating Capsule Navigation -->
+  <div class="nav-wrapper">
+    <header class="floating-nav">
+      <a href="./" class="nav-brand" aria-label="XUBO Ana Sayfa">
+        <img src="assets/img/xubo-icon.png" alt="XUBO Logo" width="34" height="34">
+        <span>XUBO</span>
+        <span class="pulse-indicator">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          v1.1.2 BETA
+        </span>
       </a>
-      <nav aria-label="Site Gezintisi">
-        <a class="opt" href="#ozellikler">Özellikler</a>
-        <a class="opt" href="#cihazlar">Nerede Çalışır</a>
-        <a class="opt" href="privacy.html">Gizlilik</a>
-        <a class="cta-nav" href="#indir">İndir</a>
+
+      <nav class="nav-menu" aria-label="Ana Menü">
+        <a class="nav-opt" href="#ekranlar">Arayüz</a>
+        <a class="nav-opt" href="#ozellikler">Mimarisi</a>
+        <a class="nav-opt" href="#ekosistem">Cihazlar</a>
+        <a class="nav-opt" href="privacy.html">Gizlilik</a>
+        <a class="btn-nav-cta" href="#indir">Beta İndir</a>
       </nav>
     </header>
+  </div>
 
-    <!-- Main Content -->
+  <div class="wrap">
     <main id="icerik">
-      <!-- Hero -->
-      <section class="hero">
-        <div class="hero__head">
-          <div>
-            <div class="hero__kicker">Premium IPTV Oynatıcı</div>
-            <h1>Televizyonunuz için <em>kusursuz</em> IPTV deneyimi.</h1>
-            <div class="hero__actions">
-              <a class="btn-primary" href="#indir">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                Android Beta Sürümünü İndir
-              </a>
-              <a class="btn-secondary" href="#ozellikler">Neler Var?</a>
-            </div>
-          </div>
-          <div>
-            <p class="lede">XUBO; Xtream ve M3U oynatma listelerini televizyonunuzda kumandayla zahmetsizce oynatan modern bir arayüzdür.</p>
-            <p class="lede-sub">Kendi sağlayıcınızdan aldığınız bilgileri girersiniz; canlı TV, film ve dizileriniz doğrudan kendi listenizden gelir.</p>
-          </div>
+      <!-- 1. Theatrical Hero Stage -->
+      <section class="hero-stage">
+        <div class="hero-pill-badge">
+          <span>✦ Yeni Nesil IPTV Deneyimi</span>
+          <span style="opacity: 0.4;">|</span>
+          <span class="tag-highlight">Android TV & Mobil Beta Yayında</span>
         </div>
 
-        <!-- TV Showcase / Interactive Mockup -->
-        <div class="tv-container">
-          <div class="tv-bezel">
-            <div class="tv-screen">
-              <img class="is-active" data-screen="live" src="assets/img/screen-live.png" alt="XUBO Canlı TV ekranı ve program rehberi" width="1920" height="1080">
-              <img data-screen="vod" src="assets/img/screen-vod.png" alt="XUBO Film ve Dizi arşivi" width="1920" height="1080" loading="lazy">
-              <img data-screen="login" src="assets/img/screen-login.png" alt="XUBO Giriş ve Profil ekranı" width="1920" height="1080" loading="lazy">
-              <img data-screen="settings" src="assets/img/screen-settings.png" alt="XUBO Ayarlar menüsü" width="1920" height="1080" loading="lazy">
+        <h1>
+          Televizyonunuz İçin<br>
+          <span class="gradient-text">Kusursuz Medya Sahnesi.</span>
+        </h1>
+
+        <p class="hero-lead">
+          Yüksek performans, sıfır karmaşa. XUBO; Xtream ve M3U oynatma listelerinizi ultra akıcı, modern ve sinematik bir OLED arayüzüyle buluşturan yeni nesil medya oynatıcısıdır.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn-glow-primary" href="#indir">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Android Beta Sürümünü İndir (APK)
+          </a>
+          <a class="btn-glass-secondary" href="#ekranlar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Arayüzü İncele
+          </a>
+        </div>
+
+        <div class="specs-ticker">
+          <span>Donanım Hızlandırma</span>
+          <span>4K / UHD 60 FPS</span>
+          <span>Akıllı EPG Rehberi</span>
+          <span>Çoklu Profil</span>
+          <span>PIN Ebeveyn Kilidi</span>
+        </div>
+
+        <!-- 2. Cinematic OLED Showcase -->
+        <div class="showcase-stage" id="ekranlar">
+          <div class="ambient-glow" aria-hidden="true"></div>
+
+          <div class="oled-tv">
+            <div class="tv-display">
+              <img class="is-visible" data-screen="live" src="assets/img/screen-live.png" alt="XUBO Canlı TV ve EPG Program Rehberi" width="1920" height="1080">
+              <img data-screen="vod" src="assets/img/screen-vod.png" alt="XUBO 4K VOD Sinema ve Film Kütüphanesi" width="1920" height="1080" loading="lazy">
+              <img data-screen="series" src="assets/img/screen-series.png" alt="XUBO Dizi ve Sezon Takip Arayüzü" width="1920" height="1080" loading="lazy">
+              <img data-screen="login" src="assets/img/screen-login.png" alt="XUBO Giriş ve Çoklu Profil Yönetimi" width="1920" height="1080" loading="lazy">
+              <img data-screen="settings" src="assets/img/screen-settings.png" alt="XUBO Sistem Ayarları ve Ebeveyn Kilidi" width="1920" height="1080" loading="lazy">
             </div>
           </div>
-          <div class="tv-stand" aria-hidden="true"></div>
+          <div class="tv-pedestal" aria-hidden="true"></div>
 
-          <!-- Controls under TV -->
-          <div class="tv-controls">
-            <div>
-              <p class="tv-controls__label">ARAYÜZ GÖRÜNÜMLERİ</p>
-              <div class="tv-tabs" role="tablist" aria-label="Uygulama ekranları">
-                <button type="button" class="tv-tab-btn is-active" role="tab" aria-selected="true" data-target="live">Canlı TV & Rehber</button>
-                <button type="button" class="tv-tab-btn" role="tab" aria-selected="false" data-target="vod">Film & Dizi</button>
-                <button type="button" class="tv-tab-btn" role="tab" aria-selected="false" data-target="login">Giriş & Profiller</button>
-                <button type="button" class="tv-tab-btn" role="tab" aria-selected="false" data-target="settings">Ayarlar & Kilit</button>
-              </div>
+          <!-- Dynamic Dock Switcher -->
+          <div class="showcase-dock">
+            <div class="dock-tabs" role="tablist" aria-label="Uygulama Ekranları">
+              <button type="button" class="dock-btn is-active" role="tab" aria-selected="true" data-target="live">
+                <span class="dock-icon">📺</span> Canlı TV & EPG
+              </button>
+              <button type="button" class="dock-btn" role="tab" aria-selected="false" data-target="vod">
+                <span class="dock-icon">🎬</span> Sinema & VOD
+              </button>
+              <button type="button" class="dock-btn" role="tab" aria-selected="false" data-target="series">
+                <span class="dock-icon">🍿</span> Dizi & Sezon
+              </button>
+              <button type="button" class="dock-btn" role="tab" aria-selected="false" data-target="login">
+                <span class="dock-icon">👤</span> Çoklu Profil
+              </button>
+              <button type="button" class="dock-btn" role="tab" aria-selected="false" data-target="settings">
+                <span class="dock-icon">⚙️</span> Sistem & Kilit
+              </button>
             </div>
-            <div class="tv-caption" aria-live="polite">
-              <b data-look-title>Canlı TV ve Program Rehberi (EPG)</b>
-              <span data-look-desc>Kategoriler, anlık yayın akışı ve kumanda tuşlarıyla tek dokunuşta kesintisiz kanal geçişi.</span>
+
+            <div class="dock-info" aria-live="polite">
+              <h3 data-dock-title>Canlı TV ve Elektronik Program Rehberi (EPG)</h3>
+              <p data-dock-desc>Anlık ve sıradaki yayın bilgisi, kategori bazlı filtreleme ve kumandadan doğrudan sayı ile kanal seçimi.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Features Section -->
+      <!-- 3. Bento Grid Features Architecture -->
       <section id="ozellikler" aria-labelledby="h-ozellikler">
-        <div class="section-head">
-          <p class="kicker">Neler Var</p>
-          <h2 id="h-ozellikler">Üç metre öteden kumandayla rahat kontrol.</h2>
+        <div class="section-header">
+          <div class="section-eyebrow">TEKNİK MİMARİ</div>
+          <h2 class="section-heading" id="h-ozellikler">Gelişmiş Performans, Kusursuz Kontrol.</h2>
+          <p class="section-desc">Gereksiz karmaşadan arındırılmış, doğrudan kumanda ergonomisine odaklanan modern IPTV motoru.</p>
         </div>
 
-        <dl class="features-grid">
-          <div class="feat-card">
-            <div class="feat-card__icon" aria-hidden="true">📺</div>
-            <dt>Canlı TV ve Program Rehberi</dt>
-            <dd>Kategori listesi, anlık ve sıradaki program akışı (EPG). Sayı tuşlarıyla doğrudan kanal seçimi.</dd>
+        <div class="bento-grid">
+          <!-- Card 1: Wide 2 cols -->
+          <div class="bento-card col-span-2">
+            <div class="bento-icon-box" aria-hidden="true">⚡</div>
+            <h3>Anlık Kanal Değişimi ve Akıllı EPG</h3>
+            <p>Arka planda optimize edilen akış tamponlaması sayesinde kanal değiştirirken ekran donmaz. Kategorize edilmiş liste, anlık yayın akışı, program detayları ve sayı tuşlarıyla doğrudan kanal atlama desteği sunar.</p>
           </div>
-          <div class="feat-card">
-            <div class="feat-card__icon" aria-hidden="true">🎬</div>
-            <dt>Film ve Dizi Kütüphanesi</dt>
-            <dd>Görsel afiş duvarı, kategori rafları, kaldığınız yerden devam etme, özet ve sezon/bölüm detayları.</dd>
+
+          <!-- Card 2: Wide 2 cols on mobile/tablet, single on desktop -->
+          <div class="bento-card">
+            <div class="bento-icon-box" aria-hidden="true">🎬</div>
+            <h3>Görsel Sinema & VOD</h3>
+            <p>Film ve diziler için poster afiş duvarı, IMDb puanları, özet bilgileri ve kaldığınız saniyeyi her profilde bağımsız hatırlayan akıllı oynatıcı hafızası.</p>
           </div>
-          <div class="feat-card">
-            <div class="feat-card__icon" aria-hidden="true">⚡</div>
-            <dt>Kesintisiz ve Hızlı Geçiş</dt>
-            <dd>Kanal değiştirirken donmayan, arka planda hızlı arabelleğe alan ve akıcı çalışan modern oynatıcı motoru.</dd>
+
+          <!-- Card 3 -->
+          <div class="bento-card">
+            <div class="bento-icon-box" aria-hidden="true">👥</div>
+            <h3>Çoklu Hesap ve Bağımsız Profiller</h3>
+            <p>Xtream ve M3U hesaplarınızı tek çatıda toplayın. Evdeki her aile üyesi için ayrı profil oluşturup favorileri ve geçmişi birbirinden ayırın.</p>
           </div>
-          <div class="feat-card">
-            <div class="feat-card__icon" aria-hidden="true">👥</div>
-            <dt>Çoklu Hesap ve Profil</dt>
-            <dd>Farklı sağlayıcı hesaplarını ekleyin; aile bireyleri için bağımsız favori ve geçmiş kayıtları tutun.</dd>
+
+          <!-- Card 4 -->
+          <div class="bento-card">
+            <div class="bento-icon-box" aria-hidden="true">🔒</div>
+            <h3>PIN Korumalı Ebeveyn Kilidi</h3>
+            <p>Yetişkin kategorileri ya da özel listeleri 4 haneli güvenli PIN şifresiyle kilitleyin; aileniz için her zaman güvenli ve denetimli bir izleme ortamı sağlayın.</p>
           </div>
-          <div class="feat-card">
-            <div class="feat-card__icon" aria-hidden="true">🔒</div>
-            <dt>Ebeveyn Kilidi ve PIN</dt>
-            <dd>Yetişkin kategorileri ya da özel listeleri 4 haneli PIN ile koruyun, evde güvenle kullanın.</dd>
+
+          <!-- Card 5 -->
+          <div class="bento-card">
+            <div class="bento-icon-box" aria-hidden="true">🌐</div>
+            <h3>Geniş Format ve Ses/Altyazı Desteği</h3>
+            <p>HLS, TS, MP4 ve MKV kapsayıcıları ile tam uyum. Yayın anında çoklu ses dilleri ve harici altyazılar arasında tek dokunuşla geçiş yapabilme imkanı.</p>
           </div>
-          <div class="feat-card">
-            <div class="feat-card__icon" aria-hidden="true">🔍</div>
-            <dt>Hızlı Arama ve Filtreleme</dt>
-            <dd>Kanal, film veya dizi adında tek dokunuşla arama yapın; aradığınız içeriği saniyeler içinde bulun.</dd>
-          </div>
-          <div class="feat-card">
-            <div class="feat-card__icon" aria-hidden="true">🌐</div>
-            <dt>Çoklu Dil ve Altyazı</dt>
-            <dd>Sağlayıcınızın sunduğu ses dilleri ve harici/dahili altyazılar arasında yayın anında seçim yapın.</dd>
-          </div>
-          <div class="feat-card">
-            <div class="feat-card__icon" aria-hidden="true">🌙</div>
-            <dt>Sinematik Koyu Arayüz</dt>
-            <dd>OLED ve büyük ekranlar için optimize edilmiş, gözü yormayan premium siyah ve amber renk paleti.</dd>
-          </div>
-        </dl>
+        </div>
       </section>
 
-      <!-- Platforms Section -->
-      <section id="cihazlar" aria-labelledby="h-cihazlar">
-        <div class="section-head">
-          <p class="kicker">Nerede Çalışır</p>
-          <h2 id="h-cihazlar">Tüm ekranlarınız için tasarlandı.</h2>
+      <!-- 4. Ecosystem & Platform Matrix -->
+      <section id="ekosistem" aria-labelledby="h-ekosistem">
+        <div class="section-header">
+          <div class="section-eyebrow">PLATFORM DESTEĞİ</div>
+          <h2 class="section-heading" id="h-ekosistem">Tüm Ekranlarınızda Tek Standart.</h2>
+          <p class="section-desc">Farklı işletim sistemlerinde aynı tutarlı hız ve sinematik koyu arayüz.</p>
         </div>
 
-        <ul class="platforms-list">
-          <li>
-            <div class="plat-name">
-              Android
-              <span class="plat-detail">(Telefon, Tablet, Android TV ve Google TV)</span>
-            </div>
-            <div class="plat-status now">
-              <a href="#indir" class="status-badge badge-active">Beta · İndir</a>
-            </div>
-          </li>
-          <li>
-            <div class="plat-name">
-              LG Smart TV
-              <span class="plat-detail">(webOS)</span>
-            </div>
-            <div class="plat-status soon">
-              <span class="status-badge badge-waiting">Yakında LG Content Store'da</span>
-            </div>
-          </li>
-          <li>
-            <div class="plat-name">
-              Samsung Smart TV
-              <span class="plat-detail">(Tizen OS)</span>
-            </div>
-            <div class="plat-status soon">
-              <span class="status-badge badge-waiting">Yakında Samsung Smart TV Mağazası'nda</span>
-            </div>
-          </li>
-          <li>
-            <div class="plat-name">
-              Xbox Series X / Series S
-              <span class="plat-detail">(Microsoft)</span>
-            </div>
-            <div class="plat-status soon">
-              <span class="status-badge badge-waiting">Yakında Microsoft Store'da</span>
-            </div>
-          </li>
-        </ul>
-      </section>
-
-      <!-- Download Section -->
-      <section id="indir" aria-labelledby="h-indir">
-        <div class="section-head">
-          <p class="kicker">Hemen Deneyin</p>
-          <h2 id="h-indir">Android Beta Sürümü</h2>
-        </div>
-
-        <div class="download-box">
-          <div class="dl-grid">
-            <!-- Left: Card & Direct Download -->
+        <div class="ecosystem-grid">
+          <!-- Android Card (Active Beta) -->
+          <div class="eco-card eco-active">
             <div>
-              <div class="dl-card-primary">
-                <h3>Android APK İndir</h3>
-                <p>Android TV, Google TV, Android tablet ve telefonlar için yayınlanan en güncel beta sürümüdür.</p>
-                <a class="btn-primary" href="downloads/XUBO_IPTV_1.1.2.apk" download="XUBO_IPTV_1.1.2.apk">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-                  APK'yı İndir (v1.1.2)
-                </a>
-                <div class="dl-meta">
-                  <span>Sürüm: 1.1.2</span>
-                  <span>Boyut: ~15.3 MB</span>
-                  <span>Android 6.0+</span>
+              <div class="eco-head">
+                <span class="eco-icon">🤖</span>
+                <span class="eco-pill pill-live">Aktif Beta</span>
+              </div>
+              <h3>Android</h3>
+              <p class="eco-desc">Telefon, Tablet, Android TV ve Google TV cihazları için optimize edildi.</p>
+            </div>
+            <div class="eco-footer">
+              <a href="#indir">
+                Beta Sürümünü İndir →
+              </a>
+            </div>
+          </div>
+
+          <!-- LG webOS Card -->
+          <div class="eco-card">
+            <div>
+              <div class="eco-head">
+                <span class="eco-icon">📺</span>
+                <span class="eco-pill pill-soon">Hazırlanıyor</span>
+              </div>
+              <h3>LG Smart TV</h3>
+              <p class="eco-desc">webOS platformu için Magic Remote kumanda optimizasyonları tamamlanıyor.</p>
+            </div>
+            <div class="eco-footer">
+              <span class="soon-label">Yakında LG Content Store'da</span>
+            </div>
+          </div>
+
+          <!-- Samsung Tizen Card -->
+          <div class="eco-card">
+            <div>
+              <div class="eco-head">
+                <span class="eco-icon">🖥️</span>
+                <span class="eco-pill pill-soon">Hazırlanıyor</span>
+              </div>
+              <h3>Samsung Smart TV</h3>
+              <p class="eco-desc">Tizen OS için tek kumanda ergonomisi ve donanım hızlandırma entegrasyonu.</p>
+            </div>
+            <div class="eco-footer">
+              <span class="soon-label">Yakında Samsung Smart TV Mağazası'nda</span>
+            </div>
+          </div>
+
+          <!-- Xbox Card -->
+          <div class="eco-card">
+            <div>
+              <div class="eco-head">
+                <span class="eco-icon">🎮</span>
+                <span class="eco-pill pill-soon">Hazırlanıyor</span>
+              </div>
+              <h3>Xbox Series X / S</h3>
+              <p class="eco-desc">Xbox oyun kumandası ile tam uyumlu 4K HDR oynatma deneyimi.</p>
+            </div>
+            <div class="eco-footer">
+              <span class="soon-label">Yakında Microsoft Store'da</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Monolith Download Hub -->
+      <section id="indir" aria-labelledby="h-indir">
+        <div class="download-hub">
+          <div class="hub-layout">
+            <!-- Left: Download Hero & Verification -->
+            <div class="hub-hero">
+              <div class="hero-pill-badge" style="background: rgba(0, 229, 255, 0.1); border-color: rgba(0, 229, 255, 0.3); color: var(--cyan);">
+                Açık Beta Dağıtımı
+              </div>
+              <h3 id="h-indir">XUBO Android Beta'yı İndirin</h3>
+              <p>
+                Android TV, Google TV, tablet veya akıllı telefonunuza doğrudan kurabileceğiniz en güncel v1.1.2 resmi APK paketidir.
+              </p>
+
+              <a class="btn-download-hero" href="downloads/XUBO_IPTV_1.1.2.apk" download="XUBO_IPTV_1.1.2.apk">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                APK'yı İndir (v1.1.2)
+              </a>
+
+              <div class="apk-specs">
+                <span>Sürüm: 1.1.2</span>
+                <span>Boyut: ~15.3 MB</span>
+                <span>Android 6.0 ve üzeri</span>
+              </div>
+
+              <!-- Cryptographic Hash Verification -->
+              <div class="security-card">
+                <div class="hash-row">
+                  <span style="color: var(--text-dim); font-weight: 600;">Paket:</span>
+                  <code style="color: var(--cyan);">com.xubo.iptv.test</code>
+                </div>
+                <div class="hash-row" style="margin-top: 8px;">
+                  <span style="color: var(--text-dim); font-weight: 600;">SHA-256:</span>
+                  <code>d50a4a7275c51cf0dea35c5600c0e1da33b8c53b19e2a3efd58d9cb8d258d469</code>
                 </div>
               </div>
-
-              <!-- Technical Verification Table -->
-              <table class="verify-table">
-                <tbody>
-                  <tr>
-                    <th>Paket Adı</th>
-                    <td><code>com.xubo.iptv.test</code></td>
-                  </tr>
-                  <tr>
-                    <th>SHA-256</th>
-                    <td><code>d50a4a7275c51cf0dea35c5600c0e1da33b8c53b19e2a3efd58d9cb8d258d469</code></td>
-                  </tr>
-                </tbody>
-              </table>
             </div>
 
-            <!-- Right: Setup Instructions -->
+            <!-- Right: Fast TV Installation Timeline -->
             <div>
-              <h3 class="guide-title">Televizyonunuza Nasıl Yüklersiniz?</h3>
-              <ol class="steps-list">
+              <h4 style="font-size: 20px; font-weight: 750; color: var(--text-primary); margin: 0 0 20px;">
+                Televizyona Kurulum (Downloader ile)
+              </h4>
+
+              <ol class="timeline-guide">
                 <li>
                   <h4>Downloader Uygulamasını Açın</h4>
-                  <p>Android TV veya Google TV cihazınızda Google Play Store'dan ücretsiz <b style="color:#fff;">Downloader by AFTVnews</b> uygulamasını yükleyin.</p>
+                  <p>Android TV veya Google TV cihazınızda Google Play Store'dan ücretsiz <b>Downloader</b> uygulamasını açın.</p>
                 </li>
                 <li>
-                  <h4>Adresi Girin</h4>
-                  <p>Downloader uygulamasının arama çubuğuna şu adresi yazıp <b>Go</b> tuşuna basın: <br>
-                    <span class="code-pill">umurcelebi.github.io/xubo/indir.html</span>
+                  <h4>Adresi Yazın</h4>
+                  <p>Downloader arama çubuğuna şu kısa adresi girip kumandadan <b>Go</b> butonuna basın: <br>
+                    <span class="fast-url">umurcelebi.github.io/xubo/indir.html</span>
                   </p>
                 </li>
                 <li>
                   <h4>İndirin ve Yükleyin</h4>
-                  <p>Açılan sayfada <b>APK'yı İndir</b> butonuna tıklayın. İndirme tamamlandığında <b>Install (Yükle)</b> seçeneğini onaylayın.</p>
+                  <p>Açılan sayfada <b>APK'yı İndir</b> seçeneğine tıklayın. İndirme bittiğinde <b>Yükle (Install)</b> butonuna basarak kurulumu tamamlayın.</p>
                 </li>
                 <li>
-                  <h4>Giriş Yapın</h4>
-                  <p>Uygulamayı açıp IPTV sağlayıcınızın verdiği Xtream veya M3U bağlantı bilgileriyle hemen izlemeye başlayın.</p>
+                  <h4>Hesabınızı Ekleyin</h4>
+                  <p>Uygulamayı açıp IPTV sağlayıcınızın Xtream Codes veya M3U bağlantı bilgileriyle anında izlemeye başlayın.</p>
                 </li>
               </ol>
             </div>
           </div>
-        </div>
 
-        <!-- Disclaimer -->
-        <div class="disclaimer-card">
-          <p><b>Yasal Bilgilendirme:</b> XUBO bir medya oynatıcı arayüzüdür. Uygulama içinde hazır kanal, yayın veya içerik bulunmaz ve satılmaz. İzlemek için kendi IPTV aboneliğiniz veya yasal oynatma listeniz gerekir.</p>
+          <!-- Legal Disclaimer -->
+          <div class="legal-box">
+            <strong>Önemli Yasal Bilgilendirme:</strong> XUBO yalnızca bağımsız bir medya oynatıcı arayüzüdür. Uygulama içerisinde hazır yayın, kanal, film veya dizi bulunmaz ve satılmaz. Hizmetten yararlanmak için kendi yasal IPTV aboneliğinizi kullanmanız gerekir.
+          </div>
         </div>
       </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-foot">
-      <div class="foot-content">
+    <!-- Global Footer -->
+    <footer class="global-footer">
+      <div class="footer-inner">
         <div>
-          © 2026 Umur Çelebi. XUBO hazır içerik veya yayın sağlamaz.
+          © 2026 Umur Çelebi. XUBO IPTV Player — Tüm hakları saklıdır.
         </div>
-        <div class="foot-links">
+        <div class="footer-links">
           <a href="../">umurcelebi.github.io</a>
-          <a href="indir.html">İndir</a>
+          <a href="indir.html">Hızlı İndirme</a>
           <a href="privacy.html">Gizlilik Politikası</a>
         </div>
       </div>
