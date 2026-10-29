@@ -138,7 +138,13 @@ const I18N = {
     
     footer_copy: '© 2026 Umur Çelebi. XUBO IPTV Player — Tüm hakları saklıdır.',
     footer_quick_dl: 'Hızlı İndirme',
-    footer_privacy: 'Gizlilik Politikası'
+    footer_privacy: 'Gizlilik Politikası',
+
+    privacy_page_title: 'Gizlilik Politikası — XUBO IPTV Player',
+    privacy_badge: 'Gizlilik & Güvenlik',
+    privacy_h1: 'XUBO Gizlilik Politikası',
+    privacy_date: 'Yürürlük Tarihi: 24 Ekim 2026',
+    nav_back_home: '← XUBO Tanıtım Sayfasına Dön'
   },
 
   en: {
@@ -275,7 +281,13 @@ const I18N = {
     
     footer_copy: '© 2026 Umur Çelebi. XUBO IPTV Player — All rights reserved.',
     footer_quick_dl: 'Quick Download',
-    footer_privacy: 'Privacy Policy'
+    footer_privacy: 'Privacy Policy',
+
+    privacy_page_title: 'Privacy Policy — XUBO IPTV Player',
+    privacy_badge: 'Privacy & Security',
+    privacy_h1: 'XUBO Privacy Policy',
+    privacy_date: 'Effective Date: October 24, 2026',
+    nav_back_home: '← Back to XUBO Home'
   }
 };
 
@@ -319,6 +331,18 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.toggle('is-active', isSelected);
       btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
     });
+
+    // Toggle language-specific blocks if any exist (e.g. for long policy text)
+    document.querySelectorAll('[data-lang-block]').forEach(el => {
+      const targetLang = el.getAttribute('data-lang-block');
+      el.style.display = (targetLang === lang) ? '' : 'none';
+    });
+
+    // Update document title if page has a title key
+    const pageTitleKey = document.documentElement.getAttribute('data-title-key');
+    if (pageTitleKey && I18N[lang] && I18N[lang][pageTitleKey]) {
+      document.title = I18N[lang][pageTitleKey];
+    }
 
     // Update relative and outbound links to preserve language
     document.querySelectorAll('a[href^="../"], a[href$=".html"], a[href="./"]').forEach(a => {
