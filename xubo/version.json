@@ -1,26 +1,26 @@
 {
-  "versionName": "1.1.11",
-  "versionCode": 135,
+  "versionName": "1.1.12",
+  "versionCode": 136,
   "minRequiredVersion": 100,
   "releaseDate": "2026-10-29",
   "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/xubo-iptv.apk",
   "apkFileName": "xubo-iptv.apk",
   "fileSize": 16032835,
-  "sha256": "b043b735eddedbaa8b2e5460a07faabb685507cdb4ff73dcd7ed21ba68ad041d",
+  "sha256": "d7cabea7bec4b230ae3644c8d7059143baba3f495d60e638752629c13ab27201",
   "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
-      "Güncelleme kurulumu sırasında izin verilip dönüldüğünde kurulumun takılması sorunu giderildi; izin sonrası kurulum otomatik devam eder",
-      "Tüm simgeler ve ikonlar renksiz, flat ve minimalist vektör formatına kavuşturuldu",
-      "Sade ve şık Siyah-Amber (Black & Amber) tema paletine geçildi, arayüz renk karmaşasından arındırıldı",
-      "Performans ve kararlılık iyileştirmeleri sağlandı"
+      "Canlı TV, dizi ve filmlerdeki video oynatma katmanı şeffaflığı düzeltildi (video görüntüsünün görünmemesi sorunu giderildi)",
+      "Güncelleme kurulumu sırasında izin verilip dönüldüğünde kurulumun otomatik devam etmesi korundu",
+      "Tüm simgeler ve ikonlar renksiz, flat ve minimalist vektör formatında",
+      "Sade ve şık Siyah-Amber (Black & Amber) tema paleti"
     ],
     "en": [
-      "Fixed update install pausing when granting unknown app install permission; installation resumes automatically upon return",
-      "All icons converted to flat, monochrome vector glyphs for a clean minimalist experience",
-      "Adopted premium Black & Amber theme duo, eliminating multi-color noise",
-      "Performance and stability enhancements"
+      "Fixed native video playback surface transparency for Live TV, Movies and Series (resolved black screen during playback)",
+      "Retained automatic update installation resume upon granting unknown app permission",
+      "Flat monochrome vector icons and controls",
+      "Black & Amber minimalist dark theme"
     ]
   }
 }
