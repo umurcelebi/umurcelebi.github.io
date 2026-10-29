@@ -281,14 +281,17 @@ const I18N = {
 
 document.addEventListener('DOMContentLoaded', () => {
   // 1. Language Controller
-  let currentLang = localStorage.getItem('xubo_site_lang');
-  
-  if (!currentLang) {
-    const urlParams = new URLSearchParams(window.location.search);
-    const paramLang = urlParams.get('lang');
-    if (paramLang && (paramLang === 'en' || paramLang === 'tr')) {
-      currentLang = paramLang;
-    } else {
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramLang = urlParams.get('lang');
+  let currentLang = null;
+
+  if (paramLang === 'en' || paramLang === 'tr') {
+    currentLang = paramLang;
+  } else {
+    try {
+      currentLang = localStorage.getItem('xubo_site_lang');
+    } catch (e) {}
+    if (!currentLang) {
       const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
       currentLang = browserLang.startsWith('tr') ? 'tr' : 'en';
     }
@@ -297,7 +300,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function setLanguage(lang) {
     if (!I18N[lang]) lang = 'tr';
     currentLang = lang;
-    localStorage.setItem('xubo_site_lang', lang);
+    try {
+      localStorage.setItem('xubo_site_lang', lang);
+    } catch (e) {}
     document.documentElement.lang = lang;
 
     // Update text content of data-i18n elements
@@ -314,6 +319,27 @@ document.addEventListener('DOMContentLoaded', () => {
       btn.classList.toggle('is-active', isSelected);
       btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
     });
+
+    // Update relative and outbound links to preserve language
+    document.querySelectorAll('a[href^="../"], a[href$=".html"], a[href="./"]').forEach(a => {
+      try {
+        const rawHref = a.getAttribute('href');
+        if (!rawHref || rawHref.startsWith('http') || rawHref.startsWith('mailto:') || rawHref.startsWith('#')) return;
+        const [path, query] = rawHref.split('?');
+        const params = new URLSearchParams(query || '');
+        params.set('lang', lang);
+        a.setAttribute('href', path + '?' + params.toString());
+      } catch (e) {}
+    });
+
+    // Update browser history URL
+    try {
+      const currentUrl = new URL(window.location.href);
+      if (currentUrl.searchParams.get('lang') !== lang) {
+        currentUrl.searchParams.set('lang', lang);
+        window.history.replaceState({}, '', currentUrl.pathname + '?' + currentUrl.searchParams.toString());
+      }
+    } catch (e) {}
 
     // Refresh active screen description if showcase exists
     const activeDockBtn = document.querySelector('.dock-btn.is-active');

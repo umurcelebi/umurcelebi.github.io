@@ -55,6 +55,15 @@
       margin-bottom: 56px;
     }
 
+    .header-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
     .badge-dev {
       display: inline-flex;
       align-items: center;
@@ -69,7 +78,51 @@
       border: 1px solid rgba(245, 158, 11, 0.3);
       padding: 5px 14px;
       border-radius: 999px;
-      margin-bottom: 20px;
+      margin-bottom: 0;
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 3px 5px;
+      gap: 3px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .lang-btn {
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      padding: 4px 9px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      line-height: 1;
+    }
+
+    .lang-btn:hover {
+      color: var(--text);
+    }
+
+    .lang-btn.is-active {
+      background: var(--amber);
+      color: #040507;
+      font-weight: 800;
+    }
+
+    .lang-sep {
+      color: rgba(255, 255, 255, 0.18);
+      font-size: 10px;
     }
 
     h1 {
@@ -256,13 +309,20 @@
 
   <main class="container">
     <header>
-      <div class="badge-dev">✦ Yazılım Geliştirici & Ürün Mimarı</div>
+      <div class="header-top">
+        <div class="badge-dev" data-i18n="badge_dev">✦ Yazılım Geliştirici & Ürün Mimarı</div>
+        <div class="lang-switcher" aria-label="Dil Seçimi">
+          <button type="button" class="lang-btn is-active" data-lang="tr" aria-pressed="true">TR</button>
+          <span class="lang-sep" aria-hidden="true">|</span>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
       <h1>Umur Çelebi</h1>
-      <p class="lead">Yüksek performanslı IPTV teknolojileri, çoklu platform mimarileri ve modern kullanıcı deneyimleri.</p>
+      <p class="lead" data-i18n="lead">Yüksek performanslı IPTV teknolojileri, çoklu platform mimarileri ve modern kullanıcı deneyimleri.</p>
     </header>
 
     <section>
-      <p class="section-title">ÖNE ÇIKAN ÜRÜN</p>
+      <p class="section-title" data-i18n="section_title">ÖNE ÇIKAN ÜRÜN</p>
 
       <a href="xubo/" class="featured-card">
         <div class="card-top">
@@ -270,19 +330,19 @@
             <img src="xubo/assets/img/xubo-icon.png" alt="XUBO" width="52" height="52">
             <div class="card-brand-text">
               <h2>XUBO</h2>
-              <span>Yeni Nesil Çoklu Platform IPTV Oynatıcı</span>
+              <span data-i18n="card_subtitle">Yeni Nesil Çoklu Platform IPTV Oynatıcı</span>
             </div>
           </div>
-          <span class="card-badge">Beta Yayında</span>
+          <span class="card-badge" data-i18n="card_badge">Beta sürüm yayında</span>
         </div>
 
-        <p class="card-desc">
+        <p class="card-desc" data-i18n="card_desc">
           Tüm cihazlar ve ekranlar için tasarlanmış bağımsız medya oynatıcısı. Televizyondan masaüstüne, tabletten telefona kesintisiz canlı TV, anlık EPG rehberi, 4K VOD kütüphanesi ve ebeveyn koruma mimarisi.
         </p>
 
         <div class="card-footer">
           <div class="plat-tags">
-            <span>Android (TV / Mobil)</span>
+            <span data-i18n="plat_android">Android (TV / Mobil)</span>
             <span>Windows</span>
             <span>macOS</span>
             <span>iOS</span>
@@ -291,7 +351,7 @@
             <span>Samsung Tizen</span>
             <span>Xbox</span>
           </div>
-          <span class="card-cta">
+          <span class="card-cta" data-i18n="card_cta">
             XUBO'yu Keşfet ve İndir →
           </span>
         </div>
@@ -301,16 +361,131 @@
 
   <footer>
     <div class="container" style="padding: 0;">
-      <span>© 2026 Umur Çelebi</span>
+      <span data-i18n="footer_copy">© 2026 Umur Çelebi</span>
       <div style="margin-top: 10px;">
         <a href="https://github.com/umurcelebi" target="_blank" rel="noopener">GitHub</a>
-        <a href="mailto:umurcelebi@gmail.com">E-posta</a>
-        <a href="xubo/">XUBO Sayfası</a>
-        <a href="xubo/indir.html">Hızlı İndir</a>
-        <a href="xubo/privacy.html">Gizlilik Politikası</a>
+        <a href="mailto:umurcelebi@gmail.com" data-i18n="footer_email">E-posta</a>
+        <a href="xubo/" data-i18n="footer_xubo">XUBO Sayfası</a>
+        <a href="xubo/indir.html" data-i18n="footer_indir">Hızlı İndir</a>
+        <a href="xubo/privacy.html" data-i18n="footer_privacy">Gizlilik Politikası</a>
       </div>
     </div>
   </footer>
 
+  <script>
+    const I18N = {
+      tr: {
+        page_title: 'Umur Çelebi — Yazılım & IPTV Teknolojileri',
+        page_desc: 'Umur Çelebi — Bağımsız yazılım geliştirici. XUBO IPTV Player ve yeni nesil medya mimarileri.',
+        badge_dev: '✦ Yazılım Geliştirici & Ürün Mimarı',
+        lead: 'Yüksek performanslı IPTV teknolojileri, çoklu platform mimarileri ve modern kullanıcı deneyimleri.',
+        section_title: 'ÖNE ÇIKAN ÜRÜN',
+        card_subtitle: 'Yeni Nesil Çoklu Platform IPTV Oynatıcı',
+        card_badge: 'Beta sürüm yayında',
+        card_desc: 'Tüm cihazlar ve ekranlar için tasarlanmış bağımsız medya oynatıcısı. Televizyondan masaüstüne, tabletten telefona kesintisiz canlı TV, anlık EPG rehberi, 4K VOD kütüphanesi ve ebeveyn koruma mimarisi.',
+        plat_android: 'Android (TV / Mobil)',
+        card_cta: 'XUBO\'yu Keşfet ve İndir →',
+        footer_copy: '© 2026 Umur Çelebi',
+        footer_email: 'E-posta',
+        footer_xubo: 'XUBO Sayfası',
+        footer_indir: 'Hızlı İndir',
+        footer_privacy: 'Gizlilik Politikası'
+      },
+      en: {
+        page_title: 'Umur Çelebi — Software & IPTV Technologies',
+        page_desc: 'Umur Çelebi — Independent software developer. XUBO IPTV Player and next-generation media architectures.',
+        badge_dev: '✦ Software Developer & Product Architect',
+        lead: 'High-performance IPTV technologies, multi-platform architectures, and modern user experiences.',
+        section_title: 'FEATURED PRODUCT',
+        card_subtitle: 'Next-Generation Multi-Platform IPTV Player',
+        card_badge: 'Beta version live',
+        card_desc: 'Independent media player crafted for all devices and displays. From TV to desktop, tablet to mobile: Seamless Live TV, real-time EPG guide, 4K VOD library, and parental control architecture.',
+        plat_android: 'Android (TV / Mobile)',
+        card_cta: 'Explore & Download XUBO →',
+        footer_copy: '© 2026 Umur Çelebi',
+        footer_email: 'Email',
+        footer_xubo: 'XUBO Page',
+        footer_indir: 'Quick Download',
+        footer_privacy: 'Privacy Policy'
+      }
+    };
+
+    (function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramLang = urlParams.get('lang');
+      let currentLang = null;
+
+      if (paramLang === 'en' || paramLang === 'tr') {
+        currentLang = paramLang;
+      } else {
+        try {
+          currentLang = localStorage.getItem('xubo_site_lang');
+        } catch (e) {}
+        if (!currentLang) {
+          const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+          currentLang = browserLang.startsWith('tr') ? 'tr' : 'en';
+        }
+      }
+
+      function updateOutboundLinks(lang) {
+        document.querySelectorAll('a[href^="xubo"]').forEach(a => {
+          try {
+            const rawHref = a.getAttribute('href');
+            const [path, query] = rawHref.split('?');
+            const params = new URLSearchParams(query || '');
+            params.set('lang', lang);
+            a.setAttribute('href', path + '?' + params.toString());
+          } catch (e) {}
+        });
+      }
+
+      function setLanguage(lang) {
+        if (!I18N[lang]) lang = 'tr';
+        currentLang = lang;
+        try {
+          localStorage.setItem('xubo_site_lang', lang);
+        } catch (e) {}
+        document.documentElement.lang = lang;
+
+        if (I18N[lang].page_title) document.title = I18N[lang].page_title;
+        const metaDesc = document.querySelector('meta[name="description"]');
+        if (metaDesc && I18N[lang].page_desc) metaDesc.setAttribute('content', I18N[lang].page_desc);
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (I18N[lang][key]) {
+            el.textContent = I18N[lang][key];
+          }
+        });
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          const isSelected = btn.getAttribute('data-lang') === lang;
+          btn.classList.toggle('is-active', isSelected);
+          btn.setAttribute('aria-pressed', isSelected ? 'true' : 'false');
+        });
+
+        updateOutboundLinks(lang);
+
+        try {
+          const currentUrl = new URL(window.location.href);
+          if (currentUrl.searchParams.get('lang') !== lang) {
+            currentUrl.searchParams.set('lang', lang);
+            window.history.replaceState({}, '', currentUrl.pathname + '?' + currentUrl.searchParams.toString());
+          }
+        } catch (e) {}
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const selected = btn.getAttribute('data-lang');
+            if (selected) setLanguage(selected);
+          });
+        });
+
+        setLanguage(currentLang);
+      });
+    })();
+  </script>
 </body>
 </html>
