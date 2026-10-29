@@ -1,24 +1,24 @@
 {
-  "versionName": "1.1.15",
-  "versionCode": 139,
+  "versionName": "1.1.16",
+  "versionCode": 140,
   "minRequiredVersion": 100,
   "releaseDate": "2026-10-29",
   "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/xubo-iptv.apk",
   "apkFileName": "xubo-iptv.apk",
   "fileSize": 16045417,
-  "sha256": "ea56918aeabc0a1fa614f91a697fde04e12f5cb141aa55ea544d799eee1954ff",
+  "sha256": "81939e31a5f31298e001bd532abfb69c54260e3dfea3c1c4607b3859d4cf32b1",
   "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
       "Google Drive ile cihazlar arası tam otomatik senkronizasyon (OAuth 2.0 Device Flow - TV ve mobil cihaz kod eşleştirme) eklendi",
-      "İzleme yeri, kalınan süre, favoriler ve ayarlar Google Drive üzerinden tüm cihazlarınızda anlık eşitlenir",
+      "Yükleme ekranı (Loading Playlists) ve animasyonlar uygulamanın Siyah, Beyaz & Amber tasarımına tam uyarlandı",
       "Yatay mod, tablet ekran yerleşimleri ve oynatma hata pencereleri optimize edildi",
       "Genel performans ve arayüz optimizasyonları yapıldı"
     ],
     "en": [
       "Added automated cross-device Google Drive sync (OAuth 2.0 Device Flow with TV/device code pairing)",
-      "Watch progress, favorites, resume points and settings now seamlessly sync across all devices via Google Drive",
+      "Redesigned playlist loading screen and spinners to match strict Black & Amber theme",
       "Optimized landscape mode, tablet layouts, and playback error recovery dialogs",
       "General performance and UI optimizations"
     ]
