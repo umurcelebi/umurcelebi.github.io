@@ -1,28 +1,26 @@
 {
-  "versionName": "1.1.8",
-  "versionCode": 142,
+  "versionName": "1.1.9",
+  "versionCode": 143,
   "minRequiredVersion": 100,
-  "releaseDate": "2026-10-29",
+  "releaseDate": "2026-10-30",
   "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/xubo-iptv.apk",
   "apkFileName": "xubo-iptv.apk",
-  "fileSize": 16033158,
-  "sha256": "e8bb212a18efb0aeeae11d537ee32f09bcdc9a29e6ef984ada3808bba32708a5",
+  "fileSize": 16037254,
+  "sha256": "eff02d0d3b8515823112729069ae3025759880e51ad78ed73a002d341a8080f1",
   "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
-      "Google Drive senkronizasyonu ve yetkilendirme akışı için kritik düzeltmeler (DriveFix) uygulandı",
-      "Varsayılan kullanıcı profili adı tüm dillerde evrensel 'Profile 1' olarak güncellendi",
-      "Yükleme ekranı (Loading Playlists) ve animasyonlar uygulamanın Siyah, Beyaz & Amber tasarımına tam uyarlandı",
-      "Yatay mod, tablet ekran yerleşimleri ve oynatma hata pencereleri optimize edildi",
-      "Genel performans ve arayüz optimizasyonları yapıldı"
+      "Google Drive senkronizasyonu için gelişmiş kayıt seviyesinde eşitleme ve silme işaretçileri (SyncStore) eklendi",
+      "Favoriler, izleme geçmişi ve hesap senkronizasyonunda kararlılık iyileştirmeleri yapıldı",
+      "Yükleme ekranı ve kullanıcı arayüzü optimizasyonları güncellendi",
+      "Genel performans ve TV/Mobil navigasyon geliştirmeleri sağlandı"
     ],
     "en": [
-      "Critical fixes and stability improvements for Google Drive synchronization (DriveFix)",
-      "Default user profile name updated to universal 'Profile 1' across all languages",
-      "Redesigned playlist loading screen and spinners to match strict Black & Amber theme",
-      "Optimized landscape mode, tablet layouts, and playback error recovery dialogs",
-      "General performance and UI optimizations"
+      "Added advanced record-level merge and deletion markers for Google Drive sync (SyncStore)",
+      "Stability and reliability improvements for favorites, watch history, and account sync",
+      "Updated loading screen and user interface optimizations",
+      "General performance and TV/Mobile navigation enhancements"
     ]
   }
 }
