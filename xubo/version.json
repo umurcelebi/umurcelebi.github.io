@@ -1,25 +1,25 @@
 {
-  "versionName": "1.1.9",
-  "versionCode": 143,
+  "versionName": "1.2.0",
+  "versionCode": 144,
   "minRequiredVersion": 100,
   "releaseDate": "2026-10-30",
   "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/xubo-iptv.apk",
   "apkFileName": "xubo-iptv.apk",
-  "fileSize": 16037254,
-  "sha256": "eff02d0d3b8515823112729069ae3025759880e51ad78ed73a002d341a8080f1",
+  "fileSize": 16041470,
+  "sha256": "5ba47b25138d8d9a2f9ffe03652494104c038b87910285bbd7e8a1d8bc48df08",
   "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
-      "Google Drive senkronizasyonu için gelişmiş kayıt seviyesinde eşitleme ve silme işaretçileri (SyncStore) eklendi",
-      "Favoriler, izleme geçmişi ve hesap senkronizasyonunda kararlılık iyileştirmeleri yapıldı",
-      "Yükleme ekranı ve kullanıcı arayüzü optimizasyonları güncellendi",
-      "Genel performans ve TV/Mobil navigasyon geliştirmeleri sağlandı"
+      "Giriş ekranında HTTP sunucularına bağlanırken çıkan güvenlik uyarı popup'ı kaldırıldı",
+      "Doğrudan ve kesintisiz Xtream bağlantı akışı sağlandı",
+      "Google Drive senkronizasyonu ve hesap eşitleme geliştirmeleri",
+      "Genel performans ve TV/Mobil navigasyon iyileştirmeleri"
     ],
     "en": [
-      "Added advanced record-level merge and deletion markers for Google Drive sync (SyncStore)",
-      "Stability and reliability improvements for favorites, watch history, and account sync",
-      "Updated loading screen and user interface optimizations",
+      "Removed the HTTP warning popup on login for unencrypted server connections",
+      "Seamless and instant Xtream login flow",
+      "Google Drive sync and account synchronization improvements",
       "General performance and TV/Mobile navigation enhancements"
     ]
   }
