@@ -1,26 +1,26 @@
 {
-  "versionName": "1.2.0",
-  "versionCode": 144,
+  "versionName": "1.2.1",
+  "versionCode": 145,
   "minRequiredVersion": 100,
-  "releaseDate": "2026-10-30",
+  "releaseDate": "2026-10-31",
   "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/xubo-iptv.apk",
   "apkFileName": "xubo-iptv.apk",
-  "fileSize": 16041470,
-  "sha256": "5ba47b25138d8d9a2f9ffe03652494104c038b87910285bbd7e8a1d8bc48df08",
+  "fileSize": 16049878,
+  "sha256": "15670505893c92d41d519c81203f822fd07c442f8a7dc9f974351eb77e539626",
   "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
-      "Giriş ekranında HTTP sunucularına bağlanırken çıkan güvenlik uyarı popup'ı kaldırıldı",
-      "Doğrudan ve kesintisiz Xtream bağlantı akışı sağlandı",
-      "Google Drive senkronizasyonu ve hesap eşitleme geliştirmeleri",
-      "Genel performans ve TV/Mobil navigasyon iyileştirmeleri"
+      "Hesap yönetimi ekranında 2 kolonlu modern kart yerleşimi",
+      "Profil oluşturma ekranı yenilendi: Standart ve Çocuk modları için segmented seçim butonları ve tek tıkla ekleme",
+      "Gizlilik ve lisanslar menüsü ana ayarlar ekranına doğrudan modal erişimi olarak taşındı",
+      "Kapsamlı çoklu dil (25 dil) lokalizasyonu ve TV kumanda odak iyileştirmeleri"
     ],
     "en": [
-      "Removed the HTTP warning popup on login for unencrypted server connections",
-      "Seamless and instant Xtream login flow",
-      "Google Drive sync and account synchronization improvements",
-      "General performance and TV/Mobile navigation enhancements"
+      "Modern 2-column card layout in Account Management",
+      "Redesigned profile creation: segmented Standard & Kids mode selectors and one-step profile creation",
+      "Privacy & Licenses moved to main settings with direct modal access",
+      "Comprehensive multi-language (25 languages) localization and TV remote navigation improvements"
     ]
   }
 }

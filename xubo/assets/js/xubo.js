@@ -116,9 +116,9 @@ const I18N = {
     // Download Hub
     hub_badge: 'Açık Beta Dağıtımı',
     hub_h3: 'XUBO Android Beta\'yı İndirin',
-    hub_lead: 'Android TV, Google TV, tablet veya akıllı telefonunuza doğrudan kurabileceğiniz en güncel v1.2.0 resmi APK paketidir.',
-    hub_btn: 'APK\'yı İndir (v1.2.0)',
-    hub_spec_ver: 'Sürüm: 1.2.0',
+    hub_lead: 'Android TV, Google TV, tablet veya akıllı telefonunuza doğrudan kurabileceğiniz en güncel v1.2.1 resmi APK paketidir.',
+    hub_btn: 'APK\'yı İndir (v1.2.1)',
+    hub_spec_ver: 'Sürüm: 1.2.1',
     hub_spec_size: 'Boyut: ~15.3 MB',
     hub_spec_req: 'Android 6.0 ve üzeri',
     hub_pkg: 'Paket:',
@@ -143,7 +143,7 @@ const I18N = {
     privacy_page_title: 'Gizlilik Politikası — XUBO IPTV Player',
     privacy_badge: 'Gizlilik & Güvenlik',
     privacy_h1: 'XUBO Gizlilik Politikası',
-    privacy_date: 'Yürürlük Tarihi: 24 Ekim 2026',
+    privacy_date: 'Yürürlük Tarihi: 31 Ekim 2026',
     nav_back_home: '← XUBO Tanıtım Sayfasına Dön'
   },
 
@@ -259,9 +259,9 @@ const I18N = {
     // Download Hub
     hub_badge: 'Open Beta Release',
     hub_h3: 'Download XUBO Android Beta',
-    hub_lead: 'The latest official v1.2.0 standalone APK package, ready for direct installation on Android TV, Google TV, tablets, or smartphones.',
-    hub_btn: 'Download APK (v1.2.0)',
-    hub_spec_ver: 'Version: 1.2.0',
+    hub_lead: 'The latest official v1.2.1 standalone APK package, ready for direct installation on Android TV, Google TV, tablets, or smartphones.',
+    hub_btn: 'Download APK (v1.2.1)',
+    hub_spec_ver: 'Version: 1.2.1',
     hub_spec_size: 'Size: ~15.3 MB',
     hub_spec_req: 'Android 6.0 and above',
     hub_pkg: 'Package:',
@@ -286,7 +286,7 @@ const I18N = {
     privacy_page_title: 'Privacy Policy — XUBO IPTV Player',
     privacy_badge: 'Privacy & Security',
     privacy_h1: 'XUBO Privacy Policy',
-    privacy_date: 'Effective Date: October 24, 2026',
+    privacy_date: 'Effective Date: October 31, 2026',
     nav_back_home: '← Back to XUBO Home'
   }
 };
