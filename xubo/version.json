@@ -1,26 +1,26 @@
 {
-  "versionName": "1.2.1",
-  "versionCode": 145,
+  "versionName": "1.2.2",
+  "versionCode": 146,
   "minRequiredVersion": 100,
   "releaseDate": "2026-10-31",
   "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/xubo-iptv.apk",
   "apkFileName": "xubo-iptv.apk",
-  "fileSize": 16049878,
-  "sha256": "15670505893c92d41d519c81203f822fd07c442f8a7dc9f974351eb77e539626",
+  "fileSize": 16033222,
+  "sha256": "cc1f0d1b76a68d421d9fc3edfa66e9287d7f211323c06618a88216d9f48ee880",
   "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
-      "Hesap yönetimi ekranında 2 kolonlu modern kart yerleşimi",
-      "Profil oluşturma ekranı yenilendi: Standart ve Çocuk modları için segmented seçim butonları ve tek tıkla ekleme",
-      "Gizlilik ve lisanslar menüsü ana ayarlar ekranına doğrudan modal erişimi olarak taşındı",
-      "Kapsamlı çoklu dil (25 dil) lokalizasyonu ve TV kumanda odak iyileştirmeleri"
+      "Canlı izlendi rozeti senkronizasyonu: Menü değiştirmeden izlenen içerik ve bölümlere anında ✓ rozeti yansıtılır",
+      "Dizi bölüm listesi ve sezon geçişleri render optimizasyonu",
+      "Oynatıcı hareket kontrollerinde (parlaklık ve ses HUD) sabit genişlik ve titreşimsiz pürüzsüz çerçeve",
+      "Genel stabilite, TV kumanda navigasyonu ve performans iyileştirmeleri"
     ],
     "en": [
-      "Modern 2-column card layout in Account Management",
-      "Redesigned profile creation: segmented Standard & Kids mode selectors and one-step profile creation",
-      "Privacy & Licenses moved to main settings with direct modal access",
-      "Comprehensive multi-language (25 languages) localization and TV remote navigation improvements"
+      "Reactive watched badge synchronization: Marked movies and series episodes immediately reflect ✓ badges without menu changes",
+      "Series episode list and season switching render optimization",
+      "Player gesture HUD (brightness and volume) frame stabilization with smooth, wobble-free scaling",
+      "General stability, TV remote navigation and performance optimizations"
     ]
   }
 }
