@@ -854,7 +854,29 @@ h2.section-heading {
 }
 
 .eco-icon {
-  font-size: 26px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #e2e8f0;
+  flex-shrink: 0;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.eco-icon svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.eco-card:hover .eco-icon {
+  transform: scale(1.08);
+  color: #ffffff;
+}
+
+.eco-card.eco-active .eco-icon {
+  color: var(--amber-bright);
 }
 
 .eco-pill {
