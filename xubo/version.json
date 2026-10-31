@@ -5,18 +5,20 @@
   "releaseDate": "2026-10-31",
   "downloadUrl": "https://umurcelebi.github.io/xubo/downloads/xubo-iptv.apk",
   "apkFileName": "xubo-iptv.apk",
-  "fileSize": 16033222,
-  "sha256": "cc1f0d1b76a68d421d9fc3edfa66e9287d7f211323c06618a88216d9f48ee880",
+  "fileSize": 16090566,
+  "sha256": "1391db0c770e016de306f5912e48edd32513ead6213caec6c5b5e49c2360671e",
   "packageName": "com.xubo.iptv",
   "forceUpdate": false,
   "changelog": {
     "tr": [
+      "Kapsamlı 25 dil lokalizasyonu: Ekran yönü, tampon modu, Google Drive ve tüm arayüz bildirimleri için eksiksiz çeviri desteği",
       "Canlı izlendi rozeti senkronizasyonu: Menü değiştirmeden izlenen içerik ve bölümlere anında ✓ rozeti yansıtılır",
       "Dizi bölüm listesi ve sezon geçişleri render optimizasyonu",
       "Oynatıcı hareket kontrollerinde (parlaklık ve ses HUD) sabit genişlik ve titreşimsiz pürüzsüz çerçeve",
       "Genel stabilite, TV kumanda navigasyonu ve performans iyileştirmeleri"
     ],
     "en": [
+      "Comprehensive 25-language localization: Full multi-language parity across screen orientation, buffer modes, Google Drive sync and all UI toasts",
       "Reactive watched badge synchronization: Marked movies and series episodes immediately reflect ✓ badges without menu changes",
       "Series episode list and season switching render optimization",
       "Player gesture HUD (brightness and volume) frame stabilization with smooth, wobble-free scaling",
