@@ -123,6 +123,7 @@ const I18N = {
     hub_spec_req: 'Android 6.0 ve üzeri',
     hub_pkg: 'Paket:',
     hub_hash: 'SHA-256:',
+    hub_github_releases: 'GitHub Releases (Tüm Sürümler) →',
 
     hub_guide_title: 'Televizyona Kurulum (Downloader ile)',
     hub_step_1_title: 'Downloader Uygulamasını Açın',
@@ -139,6 +140,7 @@ const I18N = {
     footer_copy: '© 2026 Umur Çelebi. XUBO IPTV Player — Tüm hakları saklıdır.',
     footer_quick_dl: 'Hızlı İndirme',
     footer_privacy: 'Gizlilik Politikası',
+    footer_github: 'GitHub Sürümleri',
 
     privacy_page_title: 'Gizlilik Politikası — XUBO IPTV Player',
     privacy_badge: 'Gizlilik & Güvenlik',
@@ -266,6 +268,7 @@ const I18N = {
     hub_spec_req: 'Android 6.0 and above',
     hub_pkg: 'Package:',
     hub_hash: 'SHA-256:',
+    hub_github_releases: 'GitHub Releases (All Versions) →',
 
     hub_guide_title: 'How to Install on TV (Using Downloader)',
     hub_step_1_title: 'Open Downloader App',
@@ -282,6 +285,7 @@ const I18N = {
     footer_copy: '© 2026 Umur Çelebi. XUBO IPTV Player — All rights reserved.',
     footer_quick_dl: 'Quick Download',
     footer_privacy: 'Privacy Policy',
+    footer_github: 'GitHub Releases',
 
     privacy_page_title: 'Privacy Policy — XUBO IPTV Player',
     privacy_badge: 'Privacy & Security',
