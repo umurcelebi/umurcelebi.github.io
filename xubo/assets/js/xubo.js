@@ -103,15 +103,15 @@ const I18N = {
     eco_macos_badge: 'Yakında',
     eco_macos_status: 'Yakında Mac App Store\'da',
 
-    eco_ios_title: 'iOS (iPhone)',
-    eco_ios_desc: 'iPhone ekranları için özel olarak tasarlanmış, tek elle kullanılan akıcı mobil deneyim.',
+    eco_ios_title: 'iOS (iPhone & iPad)',
+    eco_ios_desc: 'iPhone ve iPad ekranları için optimize edilmiş, akıcı mobil ve tablet deneyimi.',
     eco_ios_badge: 'Yakında',
     eco_ios_status: 'Yakında App Store\'da',
 
-    eco_ipados_title: 'iPadOS (iPad)',
-    eco_ipados_desc: 'Geniş Retina ekran, Apple Pencil ve Sahne Yöneticisi (Stage Manager) ile çoklu görev uyumu.',
-    eco_ipados_badge: 'Yakında',
-    eco_ipados_status: 'Yakında iPadOS İçin Yayında',
+    eco_appletv_title: 'Apple TV (tvOS)',
+    eco_appletv_desc: 'tvOS ve Apple TV 4K için Siri Remote kumanda uyumu ve 4K HDR yayın deneyimi.',
+    eco_appletv_badge: 'Yakında',
+    eco_appletv_status: 'Yakında tvOS App Store\'da',
 
     // Download Hub
     hub_badge: 'Açık Beta Dağıtımı',
@@ -248,15 +248,15 @@ const I18N = {
     eco_macos_badge: 'Coming Soon',
     eco_macos_status: 'Coming Soon to Mac App Store',
 
-    eco_ios_title: 'iOS (iPhone)',
-    eco_ios_desc: 'Fluid, one-hand touch-optimized mobile experience designed specifically for iPhone.',
+    eco_ios_title: 'iOS (iPhone & iPad)',
+    eco_ios_desc: 'Tailored for iPhone and iPad with fluid mobile and tablet navigation.',
     eco_ios_badge: 'Coming Soon',
     eco_ios_status: 'Coming Soon to App Store',
 
-    eco_ipados_title: 'iPadOS (iPad)',
-    eco_ipados_desc: 'Optimized for iPad Liquid Retina displays, Apple Pencil, and Stage Manager multitasking.',
-    eco_ipados_badge: 'Coming Soon',
-    eco_ipados_status: 'Coming Soon for iPadOS',
+    eco_appletv_title: 'Apple TV (tvOS)',
+    eco_appletv_desc: 'Engineered for Apple TV 4K with Siri Remote ergonomics and 4K HDR playback.',
+    eco_appletv_badge: 'Coming Soon',
+    eco_appletv_status: 'Coming Soon to tvOS App Store',
 
     // Download Hub
     hub_badge: 'Open Beta Release',
