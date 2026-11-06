@@ -140,9 +140,11 @@ const I18N = {
     footer_copy: '© 2026 Umur Çelebi. XUBO IPTV Player — Tüm hakları saklıdır.',
     footer_quick_dl: 'Hızlı İndirme',
     footer_privacy: 'Gizlilik Politikası',
+    footer_terms: 'Kullanım Koşulları',
     footer_github: 'GitHub Sürümleri',
 
     privacy_page_title: 'Gizlilik Politikası — XUBO IPTV Player',
+    terms_page_title: 'Kullanım Koşulları & Yasal Uyarı — XUBO IPTV Player',
     privacy_badge: 'Gizlilik & Güvenlik',
     privacy_h1: 'XUBO Gizlilik Politikası',
     privacy_date: 'Yürürlük Tarihi: 31 Ekim 2026',
@@ -285,9 +287,11 @@ const I18N = {
     footer_copy: '© 2026 Umur Çelebi. XUBO IPTV Player — All rights reserved.',
     footer_quick_dl: 'Quick Download',
     footer_privacy: 'Privacy Policy',
+    footer_terms: 'Terms of Use',
     footer_github: 'GitHub Releases',
 
     privacy_page_title: 'Privacy Policy — XUBO IPTV Player',
+    terms_page_title: 'Terms of Use & Legal Disclaimer — XUBO IPTV Player',
     privacy_badge: 'Privacy & Security',
     privacy_h1: 'XUBO Privacy Policy',
     privacy_date: 'Effective Date: October 31, 2026',
