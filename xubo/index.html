@@ -3,6 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function() {
+      var p = new URLSearchParams(window.location.search).get('lang');
+      var l = p || localStorage.getItem('xubo_site_lang');
+      if (!l) {
+        var bl = (navigator.language || '').toLowerCase();
+        l = bl.startsWith('tr') ? 'tr' : 'en';
+      }
+      if (l === 'en' || l === 'tr') {
+        document.documentElement.lang = l;
+      }
+    })();
+  </script>
   <title>XUBO — Tüm Ekranlarınız İçin Yeni Nesil IPTV Oynatıcı</title>
   <meta name="description" content="XUBO; televizyon, bilgisayar, tablet ve telefonda kendi IPTV aboneliğinizdeki canlı TV, film ve dizileri en yüksek performans ve sinematik koyu arayüzle oynatan bağımsız medya oynatıcısıdır.">
   <link rel="icon" href="favicon.png" type="image/png">

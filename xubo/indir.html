@@ -3,6 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function() {
+      var p = new URLSearchParams(window.location.search).get('lang');
+      var l = p || localStorage.getItem('xubo_site_lang');
+      if (!l) {
+        var bl = (navigator.language || '').toLowerCase();
+        l = bl.startsWith('tr') ? 'tr' : 'en';
+      }
+      if (l === 'en' || l === 'tr') {
+        document.documentElement.lang = l;
+      }
+    })();
+  </script>
   <title>İndir — XUBO IPTV Player</title>
   <meta name="description" content="XUBO Android beta sürümünü (APK) doğrudan televizyonunuza, tabletinize veya telefonunuza indirin; Downloader ve hızlı kurulum adımları.">
   <link rel="icon" href="favicon.png" type="image/png">

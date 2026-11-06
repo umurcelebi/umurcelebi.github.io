@@ -148,6 +148,9 @@ const I18N = {
     privacy_badge: 'Gizlilik & Güvenlik',
     privacy_h1: 'XUBO Gizlilik Politikası',
     privacy_date: 'Yürürlük Tarihi: 31 Ekim 2026',
+    terms_badge: 'Yasal Koşullar & Lisans',
+    terms_h1: 'XUBO Kullanım Koşulları & Yasal Uyarı',
+    terms_date: 'Yürürlük Tarihi: 6 Kasım 2026',
     nav_back_home: '← XUBO Tanıtım Sayfasına Dön'
   },
 
@@ -295,6 +298,9 @@ const I18N = {
     privacy_badge: 'Privacy & Security',
     privacy_h1: 'XUBO Privacy Policy',
     privacy_date: 'Effective Date: October 31, 2026',
+    terms_badge: 'Legal Terms & License',
+    terms_h1: 'XUBO Terms of Use & Disclaimer',
+    terms_date: 'Effective Date: November 6, 2026',
     nav_back_home: '← Back to XUBO Home'
   }
 };
@@ -315,6 +321,22 @@ document.addEventListener('DOMContentLoaded', () => {
       const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
       currentLang = browserLang.startsWith('tr') ? 'tr' : 'en';
     }
+  }
+
+  function updateAllLinks(lang) {
+    document.querySelectorAll('a[href]').forEach(a => {
+      try {
+        const rawHref = a.getAttribute('href');
+        if (!rawHref || rawHref.startsWith('http://') || rawHref.startsWith('https://') || rawHref.startsWith('//') || rawHref.startsWith('mailto:') || rawHref.startsWith('javascript:') || rawHref.startsWith('#')) return;
+        const [baseAndQuery, hash] = rawHref.split('#');
+        const [path, query] = baseAndQuery.split('?');
+        const params = new URLSearchParams(query || '');
+        params.set('lang', lang);
+        let newHref = path + '?' + params.toString();
+        if (hash) newHref += '#' + hash;
+        a.setAttribute('href', newHref);
+      } catch (e) {}
+    });
   }
 
   function setLanguage(lang) {
@@ -353,16 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Update relative and outbound links to preserve language
-    document.querySelectorAll('a[href^="../"], a[href$=".html"], a[href="./"]').forEach(a => {
-      try {
-        const rawHref = a.getAttribute('href');
-        if (!rawHref || rawHref.startsWith('http') || rawHref.startsWith('mailto:') || rawHref.startsWith('#')) return;
-        const [path, query] = rawHref.split('?');
-        const params = new URLSearchParams(query || '');
-        params.set('lang', lang);
-        a.setAttribute('href', path + '?' + params.toString());
-      } catch (e) {}
-    });
+    updateAllLinks(lang);
 
     // Update browser history URL
     try {
@@ -380,6 +393,25 @@ document.addEventListener('DOMContentLoaded', () => {
       if (target) updateDockInfo(target);
     }
   }
+
+  // Global click capturing to guarantee links maintain language
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+    const rawHref = link.getAttribute('href');
+    if (!rawHref || rawHref.startsWith('http://') || rawHref.startsWith('https://') || rawHref.startsWith('//') || rawHref.startsWith('mailto:') || rawHref.startsWith('javascript:') || rawHref.startsWith('#')) return;
+    try {
+      const [baseAndQuery, hash] = rawHref.split('#');
+      const [path, query] = baseAndQuery.split('?');
+      const params = new URLSearchParams(query || '');
+      if (currentLang && params.get('lang') !== currentLang) {
+        params.set('lang', currentLang);
+        let newHref = path + '?' + params.toString();
+        if (hash) newHref += '#' + hash;
+        link.setAttribute('href', newHref);
+      }
+    } catch (err) {}
+  }, true);
 
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {

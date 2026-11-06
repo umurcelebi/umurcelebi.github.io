@@ -3,6 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function() {
+      var p = new URLSearchParams(window.location.search).get('lang');
+      var l = p || localStorage.getItem('xubo_site_lang');
+      if (!l) {
+        var bl = (navigator.language || '').toLowerCase();
+        l = bl.startsWith('tr') ? 'tr' : 'en';
+      }
+      if (l === 'en' || l === 'tr') {
+        document.documentElement.lang = l;
+      }
+    })();
+  </script>
   <title>Kullanım Koşulları & Yasal Uyarı — XUBO IPTV Player</title>
   <meta name="description" content="XUBO IPTV Player kullanım koşulları, lisans sözleşmesi, telif hakları ve yasal sorumluluk reddi bildirimi.">
   <link rel="icon" href="favicon.png" type="image/png">
@@ -226,17 +239,17 @@
     <main id="icerik" class="policy-wrapper">
       <div>
         <a href="./" class="policy-back-link">
-          <span>← XUBO Tanıtım Sayfasına Dön</span>
+          <span data-i18n="nav_back_home">← XUBO Tanıtım Sayfasına Dön</span>
         </a>
       </div>
 
       <!-- Hero Card -->
       <div class="policy-hero">
-        <div class="hero-pill-badge" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); color: var(--amber-bright);">
+        <div class="hero-pill-badge" style="background: rgba(245, 158, 11, 0.1); border-color: rgba(245, 158, 11, 0.3); color: var(--amber-bright);" data-i18n="terms_badge">
           Yasal Koşullar & Lisans
         </div>
-        <h1>XUBO Kullanım Koşulları & Yasal Uyarı</h1>
-        <p class="policy-date">
+        <h1 data-i18n="terms_h1">XUBO Kullanım Koşulları & Yasal Uyarı</h1>
+        <p class="policy-date" data-i18n="terms_date">
           Yürürlük Tarihi: 6 Kasım 2026
         </p>
       </div>
@@ -537,7 +550,7 @@
       </div>
 
       <!-- Legal Box -->
-      <div class="legal-box" style="margin-top: 40px;">
+      <div class="legal-box" style="margin-top: 40px;" data-i18n="legal_text">
         Önemli Yasal Bilgilendirme: XUBO yalnızca bağımsız bir medya oynatıcı arayüzüdür. Uygulama içerisinde hazır yayın, kanal, film veya dizi bulunmaz ve satılmaz. Hizmetten yararlanmak için kendi yasal IPTV aboneliğinizi kullanmanız gerekir.
       </div>
     </main>
@@ -545,15 +558,15 @@
     <!-- Footer -->
     <footer class="global-footer">
       <div class="footer-inner">
-        <div>
+        <div data-i18n="footer_copy">
           © 2026 Umur Çelebi. XUBO IPTV Player — Tüm hakları saklıdır.
         </div>
         <div class="footer-links">
-          <a href="./">XUBO Tanıtım</a>
+          <a href="./" data-i18n="nav_home">XUBO Tanıtım</a>
           <a href="../">umurcelebi.github.io</a>
-          <a href="indir.html">Hızlı İndirme</a>
-          <a href="privacy.html">Gizlilik Politikası</a>
-          <a href="terms.html">Kullanım Koşulları</a>
+          <a href="indir.html" data-i18n="footer_quick_dl">Hızlı İndirme</a>
+          <a href="privacy.html" data-i18n="footer_privacy">Gizlilik Politikası</a>
+          <a href="terms.html" data-i18n="footer_terms">Kullanım Koşulları</a>
         </div>
       </div>
     </footer>
