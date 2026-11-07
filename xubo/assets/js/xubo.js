@@ -95,22 +95,22 @@ const I18N = {
 
     eco_windows_title: 'Windows',
     eco_windows_desc: 'Windows 10 ve 11 masaüstü ve dizüstü bilgisayarlar için bağımsız oynatıcı uygulaması.',
-    eco_windows_badge: 'Yakında',
+    eco_windows_badge: 'Hazırlanıyor',
     eco_windows_status: 'Yakında Windows İçin Yayında',
 
     eco_macos_title: 'macOS',
     eco_macos_desc: 'Apple Silicon (M1/M2/M3/M4) ve Intel Mac cihazları için yüksek performanslı masaüstü arayüzü.',
-    eco_macos_badge: 'Yakında',
+    eco_macos_badge: 'Hazırlanıyor',
     eco_macos_status: 'Yakında Mac App Store\'da',
 
     eco_ios_title: 'iOS (iPhone & iPad)',
     eco_ios_desc: 'iPhone ve iPad ekranları için optimize edilmiş, akıcı mobil ve tablet deneyimi.',
-    eco_ios_badge: 'Yakında',
+    eco_ios_badge: 'Hazırlanıyor',
     eco_ios_status: 'Yakında App Store\'da',
 
     eco_appletv_title: 'Apple TV (tvOS)',
     eco_appletv_desc: 'tvOS ve Apple TV 4K için Siri Remote kumanda uyumu ve 4K HDR yayın deneyimi.',
-    eco_appletv_badge: 'Yakında',
+    eco_appletv_badge: 'Hazırlanıyor',
     eco_appletv_status: 'Yakında tvOS App Store\'da',
 
     // Download Hub
@@ -245,22 +245,22 @@ const I18N = {
 
     eco_windows_title: 'Windows',
     eco_windows_desc: 'Standalone media player engineered for Windows 10 and 11 desktop and laptop PCs.',
-    eco_windows_badge: 'Coming Soon',
+    eco_windows_badge: 'In Progress',
     eco_windows_status: 'Coming Soon for Windows',
 
     eco_macos_title: 'macOS',
     eco_macos_desc: 'High-performance native desktop client for Apple Silicon (M1–M4) and Intel Macs.',
-    eco_macos_badge: 'Coming Soon',
+    eco_macos_badge: 'In Progress',
     eco_macos_status: 'Coming Soon to Mac App Store',
 
     eco_ios_title: 'iOS (iPhone & iPad)',
     eco_ios_desc: 'Tailored for iPhone and iPad with fluid mobile and tablet navigation.',
-    eco_ios_badge: 'Coming Soon',
+    eco_ios_badge: 'In Progress',
     eco_ios_status: 'Coming Soon to App Store',
 
     eco_appletv_title: 'Apple TV (tvOS)',
     eco_appletv_desc: 'Engineered for Apple TV 4K with Siri Remote ergonomics and 4K HDR playback.',
-    eco_appletv_badge: 'Coming Soon',
+    eco_appletv_badge: 'In Progress',
     eco_appletv_status: 'Coming Soon to tvOS App Store',
 
     // Download Hub
